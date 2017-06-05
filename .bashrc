@@ -139,32 +139,32 @@ export TERM=xterm-256color
 # ssh
 alias ssh='TERM=screen ssh'
 
-# ssh-agent
-SSH_ROOT="$HOME/.ssh"
-SSH_AGENT_FILE="$SSH_ROOT/ssh-agent-info"
-AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
-test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
-if ! ssh-add -l > /dev/null; then
-  ssh-agent > $SSH_AGENT_FILE
-  source $SSH_AGENT_FILE
-  ssh-add "$SSH_ROOT/id_rsa@tccmp-s" "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@conoha"
-  #ssh-add `ls "$SSH_ROOT"/id_rsa@*`
-fi
-if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
-  ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
-fi
-
-# pyenv (you need to set environment variables only if you cloned pyenv from GitHub)
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# anaconda
-# If you only use anaconda, you should set path
-#export PATH="$PYENV_ROOT/versions/anaconda3-4.0.0/bin/:$PATH"
-# If you also use pyenv, you should not set path but use activate
-alias activate="source $PYENV_ROOT/versions/anaconda3-4.0.0/bin/activate"
-
-# XDG_CONFIG_HOME
-export XDG_CONFIG_HOME=$HOME/.config
+## ssh-agent
+#SSH_ROOT="$HOME/.ssh"
+#SSH_AGENT_FILE="$SSH_ROOT/ssh-agent-info"
+#AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
+#test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
+#if ! ssh-add -l > /dev/null; then
+#  ssh-agent > $SSH_AGENT_FILE
+#  source $SSH_AGENT_FILE
+#  ssh-add "$SSH_ROOT/id_rsa@tccmp-s" "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@conoha"
+#  #ssh-add `ls "$SSH_ROOT"/id_rsa@*`
+#fi
+#if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
+#  ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
+#fi
+#
+## pyenv (you need to set environment variables only if you cloned pyenv from GitHub)
+##export PYENV_ROOT="$HOME/.pyenv"
+##export PATH="$PYENV_ROOT/bin:$PATH"
+##eval "$(pyenv init -)"
+#
+## anaconda
+## If you only use anaconda, you should set path
+##export PATH="$PYENV_ROOT/versions/anaconda3-4.0.0/bin/:$PATH"
+## If you also use pyenv, you should not set path but use activate
+#alias activate="source $PYENV_ROOT/versions/anaconda3-4.0.0/bin/activate"
+#
+## XDG_CONFIG_HOME
+#export XDG_CONFIG_HOME=$HOME/.config
 
