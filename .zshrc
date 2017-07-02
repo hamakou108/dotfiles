@@ -194,6 +194,10 @@ if [[ -f /usr/local/bin/nvim ]]; then
     alias vi='/usr/local/bin/nvim'
     alias vim='/usr/local/bin/nvim'
     alias editor='/usr/local/bin/nvim'
+if [[ -f /usr/bin/nvim ]]; then
+    alias vi='/usr/bin/nvim'
+    alias vim='/usr/bin/nvim'
+    alias editor='/usr/bin/nvim'
 fi
 
 # XDG_CONFIG_HOME
