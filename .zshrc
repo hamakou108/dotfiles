@@ -190,9 +190,9 @@ alias deactivate="source $PYENV_ROOT/versions/anaconda3-4.3.1/bin/deactivate"
 ########################################
 # NeoVim
 # alias
-alias vi='/usr/local/bin/nvim'
-alias vim='/usr/local/bin/nvim'
-alias editor='/usr/local/bin/nvim'
+#alias vi='/usr/local/bin/nvim'
+#alias vim='/usr/local/bin/nvim'
+#alias editor='/usr/local/bin/nvim'
 
 # XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
