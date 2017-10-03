@@ -112,7 +112,9 @@ endif
 " 改行コードのエンコーディング
 :set fileformat=unix "max, dos
 " 無名レジスタに入るデータを，+レジスタ（クリップボード）にも入れる
-:set clipboard+=unnamedplus
+"if (executalble('pbcopy') || executalble('xclip') || executalble('xsel')) || has('clipboard')
+"  :set clipboard+=unnamedplus
+"end if
 " GNOMEの場合に256色表示を有効にする
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
