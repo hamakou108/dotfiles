@@ -190,11 +190,11 @@ alias deactivate="source $PYENV_ROOT/versions/anaconda3-4.3.1/bin/deactivate"
 ########################################
 # NeoVim
 # alias
-if [[ -f /usr/local/bin/nvim ]]; then
+if [[ -a /usr/local/bin/nvim ]]; then
     alias vi='/usr/local/bin/nvim'
     alias vim='/usr/local/bin/nvim'
     alias editor='/usr/local/bin/nvim'
-if [[ -f /usr/bin/nvim ]]; then
+elif [[ -a /usr/bin/nvim ]]; then
     alias vi='/usr/bin/nvim'
     alias vim='/usr/bin/nvim'
     alias editor='/usr/bin/nvim'
@@ -221,3 +221,4 @@ esac
 
 # source path to nvm (version management system of Node.js)
 source ~/.nvm/nvm.sh
+
