@@ -93,10 +93,10 @@ endif
 :set smartindent
 " Tabをスペースに変更
 :set expandtab
-:set tabstop=4
-:set softtabstop=4
+:set tabstop=2
+:set softtabstop=2
 " インデント幅の設定
-:set shiftwidth=4
+:set shiftwidth=2
 
 " <その他>
 " マウス入力の有効化
