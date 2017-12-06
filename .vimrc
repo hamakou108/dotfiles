@@ -7,16 +7,19 @@
 
 " the path of directory including dein.vim
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-" the path of directory including dein.vim
 let s:dein_dir = s:cache_home . '/dein'
 " the path of dein.vim
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" If there isn't dein, git clone.
+" If there isn't dein, git clone
 if !isdirectory(s:dein_repo_dir)
   execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
+
+" add runtime path
+if isdirectory(s:dein_repo_dir)
+  execute 'set runtimepath^=' . s:dein_repo_dir
+endif
 
 " read plugin lists and create cache
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
