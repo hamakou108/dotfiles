@@ -57,6 +57,18 @@ au BufRead,BufNewFile *.md set filetype=markdown
 :set scrolloff=2
 :set sidescrolloff=4
 
+" remove dust before saving the file
+function! s:remove_dust()
+  let cursor = getpos(".")
+    " remove space in the end of the line
+    %s/\s\+$//ge
+    " convert tab character into space
+    "%s/\t/  /ge
+  call setpos(".", cursor)
+  unlet cursor
+endfunction
+autocmd BufWritePre * call <SID>remove_dust()
+
 " <検索>
 " インクリメンタルサーチの有効化
 :set incsearch
