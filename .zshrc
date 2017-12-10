@@ -47,7 +47,7 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 
 # sudo の後ろでコマンド名を補完する
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+  /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
@@ -62,8 +62,8 @@ zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
 function _update_vcs_info_msg() {
-    LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
+  LANG=en_US.UTF-8 vcs_info
+  RPROMPT="${vcs_info_msg_0_}"
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
@@ -136,14 +136,14 @@ alias -g G='| grep'
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
+  # Mac
+  alias -g C='| pbcopy'
 elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
+  # Linux
+  alias -g C='| xsel --input --clipboard'
 elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
+  # Cygwin
+  alias -g C='| putclip'
 fi
 
 ########################################
@@ -161,13 +161,13 @@ SSH_AGENT_FILE="$SSH_ROOT/ssh-agent-info"
 AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
 test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
 if ! ssh-add -l > /dev/null; then
-    ssh-agent > $SSH_AGENT_FILE
-    source $SSH_AGENT_FILE
-    ssh-add "$SSH_ROOT/id_rsa@tccmp-s" "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@conoha"
-    #ssh-add `ls "$SSH_ROOT"/id_rsa@*`
+  ssh-agent > $SSH_AGENT_FILE
+  source $SSH_AGENT_FILE
+  ssh-add "$SSH_ROOT/id_rsa@tccmp-s" "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@conoha"
+  #ssh-add `ls "$SSH_ROOT"/id_rsa@*`
 fi
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
-    ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
+  ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
 fi
 
 ########################################
@@ -191,13 +191,13 @@ alias deactivate="source $PYENV_ROOT/versions/anaconda3-4.3.1/bin/deactivate"
 # NeoVim
 # alias
 if [[ -a /usr/local/bin/nvim ]]; then
-    alias vi='/usr/local/bin/nvim'
-    alias vim='/usr/local/bin/nvim'
-    alias editor='/usr/local/bin/nvim'
+  alias vi='/usr/local/bin/nvim'
+  alias vim='/usr/local/bin/nvim'
+  alias editor='/usr/local/bin/nvim'
 elif [[ -a /usr/bin/nvim ]]; then
-    alias vi='/usr/bin/nvim'
-    alias vim='/usr/bin/nvim'
-    alias editor='/usr/bin/nvim'
+  alias vi='/usr/bin/nvim'
+  alias vim='/usr/bin/nvim'
+  alias editor='/usr/bin/nvim'
 fi
 
 # XDG_CONFIG_HOME
@@ -206,15 +206,15 @@ export XDG_CONFIG_HOME=$HOME/.config
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
+  darwin*)
+    #Mac用の設定
+    export CLICOLOR=1
+    alias ls='ls -G -F'
+    ;;
+  linux*)
+    #Linux用の設定
+    alias ls='ls -F --color=auto'
+    ;;
 esac
 
 # vim:set ft=zsh:
