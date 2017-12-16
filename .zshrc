@@ -175,17 +175,22 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 
 # pyenv PATH (only if pyenv is cloned from GitHub)
-#export PATH="$PYENV_ROOT/bin:$PATH"
+case ${OSTYPE} in
+  linux*)
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    ;;
+esac
 
 # enabale shims and autocomposition of pyenv
 eval "$(pyenv init -)"
 
-# anaconda
-# If you only use anaconda, you should set path
-#export PATH="$PYENV_ROOT/versions/anaconda3-4.3.1/bin/:$PATH"
+# miniconda
+CONDA_VERSION="miniconda3-latest"
+# If you only use conda (don't use pyenv), you should set path
+#export PATH="$PYENV_ROOT/versions/${CONDA_VERSION}/bin/:$PATH"
 # If you also use pyenv, you should not set path but use activate
-alias activate="source $PYENV_ROOT/versions/anaconda3-4.3.1/bin/activate"
-alias deactivate="source $PYENV_ROOT/versions/anaconda3-4.3.1/bin/deactivate"
+alias activate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/activate"
+alias deactivate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/deactivate"
 
 ########################################
 # NeoVim
