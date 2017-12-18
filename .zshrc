@@ -163,7 +163,7 @@ test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
 if ! ssh-add -l > /dev/null; then
   ssh-agent > $SSH_AGENT_FILE
   source $SSH_AGENT_FILE
-  ssh-add "$SSH_ROOT/id_rsa@tccmp-s" "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@conoha"
+  ssh-add "$SSH_ROOT/id_rsa@github" "$SSH_ROOT/id_rsa@bitbucket"
   #ssh-add `ls "$SSH_ROOT"/id_rsa@*`
 fi
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
@@ -224,4 +224,3 @@ esac
 
 # source path to nvm (version management system of Node.js)
 source ~/.nvm/nvm.sh
-
