@@ -17,5 +17,6 @@ repo = 'kannokanno/previm'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
+# save vim session (type :Obsession in vim)
 [[plugins]]
 repo = 'tpope/vim-obsession'
