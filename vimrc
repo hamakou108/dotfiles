@@ -1,3 +1,6 @@
+" home directory
+let s:home_path = fnamemodify(expand('<sfile>'), ':h')
+
 " <Plugins>
 "
 " dein settings {{{
@@ -22,15 +25,11 @@ if isdirectory(s:dein_repo_dir)
   execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
-" read plugin lists and create cache
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+" load plugins and create cache
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir, [$MYVIMRC, s:toml_file])
-  " These files are plugin lists (TOML)
-  let s:toml      = expand('~/.dein.toml')
-  let s:lazy_toml = expand('~/.dein_lazy.toml')
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(expand('~/.dein.toml'),      {'lazy': 0})
+  call dein#load_toml(expand('~/.dein_lazy.toml'), {'lazy': 1})
   call dein#add('nanotech/jellybeans.vim', {'merged': 0})
   call dein#end()
   call dein#save_state()
