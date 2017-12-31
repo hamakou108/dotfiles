@@ -1,8 +1,8 @@
-# save vim session (type :Obsession in vim)
+# save vim session (type :Obsession to save)
 [[plugins]]
 repo = 'tpope/vim-obsession'
 
-# snippet
+# snippet expansion
 [[plugins]]
 repo = 'SirVer/ultisnips'
 depends = ['vim-snippets']
