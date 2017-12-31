@@ -1,22 +1,12 @@
+# plugin manager
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# asyncronous execution library (for deoplete)
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+# snippet repository
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-
-[[plugins]]
-repo = 'kannokanno/previm'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
-# save vim session (type :Obsession in vim)
-[[plugins]]
-repo = 'tpope/vim-obsession'
+repo = 'honza/vim-snippets'
