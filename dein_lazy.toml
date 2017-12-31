@@ -2,8 +2,9 @@
 [[plugins]]
 repo = 'tpope/vim-obsession'
 
-# snippet expansion
+# snippet expansion ('deoppet.nvim' which is improved version of
+# 'neosnippet.vim' is comming soon!)
 [[plugins]]
-repo = 'SirVer/ultisnips'
+repo = 'Shougo/neosnippet.vim'
 depends = ['vim-snippets']
 on_i = 1
