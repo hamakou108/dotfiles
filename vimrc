@@ -37,7 +37,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-
 " }}}
 
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -66,7 +65,7 @@ function! s:remove_dust()
   call setpos(".", cursor)
   unlet cursor
 endfunction
-autocmd BufWritePre * call <SID>remove_dust()
+au BufWritePre * call <SID>remove_dust()
 
 " <検索>
 " インクリメンタルサーチの有効化
