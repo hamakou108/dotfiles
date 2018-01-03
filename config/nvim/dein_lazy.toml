@@ -8,3 +8,15 @@ repo = 'tpope/vim-obsession'
 repo = 'Shougo/neosnippet.vim'
 depends = ['vim-snippets']
 on_i = 1
+
+# syntax hilighting
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+
+#
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# preview markdown
+[[plugins]]
+repo = 'kannokanno/previm'

@@ -1,46 +1,3 @@
-" home directory
-let s:home_path = fnamemodify(expand('<sfile>'), ':h')
-
-" <Plugins>
-"
-" dein settings {{{
-"if &compatible
-"  set nocompatible
-"endif
-
-" the path of directory including dein.vim
-" XDG_CACHE_HOME is for Neovim
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-let s:dein_dir = s:cache_home . '/dein'
-" the path of dein.vim
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-" If there isn't dein, git clone
-if !isdirectory(s:dein_repo_dir)
-  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-endif
-
-" add runtime path
-if isdirectory(s:dein_repo_dir)
-  execute 'set runtimepath^=' . s:dein_repo_dir
-endif
-
-" load plugins and create cache
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-  call dein#load_toml(expand('~/.dein.toml'),      {'lazy': 0})
-  call dein#load_toml(expand('~/.dein_lazy.toml'), {'lazy': 1})
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
-" }}}
-
-au BufRead,BufNewFile *.md set filetype=markdown
-
 " <表示>
 " 構文毎の色分け
 :syntax on
@@ -80,22 +37,7 @@ au BufWritePre * call <SID>remove_dust()
 " <移動>
 " 折り返しの無効化
 :set nowrap
-" 拡張子がtexのファイルを編集するときだけ折り返しを有効化する．
-if expand("%:t") =~ ".*\.tex"
-  :set wrap
-endif
-" 拡張子がtxtのファイルを編集するときだけ折り返しを有効化する．
-if expand("%:t") =~ ".*\.txt"
-  :set wrap
-endif
-" 拡張子がhtmlのファイルを編集するときだけ折り返しを有効化する．
-if expand("%:t") =~ ".*\.html"
-  :set wrap
-endif
-" 拡張子がmdのファイルを編集するときだけ折り返しを有効化する．
-if expand("%:t") =~ ".*\.md"
-  :set wrap
-endif
+
 " 行を跨いでの移動
 :set whichwrap=b,s,h,l,<,>,[,],~
 
@@ -138,21 +80,6 @@ if $TERM == 'screen'
 endif
 " colorschemeの設定
 colorscheme jellybeans
-" 挿入モードからノーマルモード
-inoremap <C-J> <Esc>
-" ファイルの直前までの絶対パスを補完
-cnoremap <C-X> <C-R>=expand("%:p:h")<CR>/
-" ファイルの絶対パスを補完
-cnoremap <C-Z> <C-R>=expand("%:p:r")<CR>
-" 表示行で移動する．
-nnoremap j gj
-nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-" 日本語の行の連結時には空白を入力しない．
-set formatoptions+=mM
-" 画面最後の行をできる限り表示する．
-set display+=lastline
 
 " Neovim
 if has('nvim')
