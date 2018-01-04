@@ -7,7 +7,7 @@ ln -nsf ~/.config/nvim ~/.vim
 ln -sf ~/.config/nvim/init.vim ~/.vimrc
 ln -sf ${dotfiles_dir}/config/nvim/init.vim ~/.vimrc
 ln -sf ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
-ln -sf ${dotfiles_dir}/tmux.conf ~/.tmux.conf
+ln -sf ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
 
 # update profiles
 touch ~/.bash_profile
