@@ -66,10 +66,12 @@ au BufWritePre * call <SID>remove_dust()
 :set fileencodings=utf-8,iso-2022-jp,cp932,sjjs,euc-jp
 " 改行コードのエンコーディング
 :set fileformat=unix "max, dos
-" 無名レジスタに入るデータを，+レジスタ（クリップボード）にも入れる
-"if (executalble('pbcopy') || executalble('xclip') || executalble('xsel')) || has('clipboard')
-"  :set clipboard+=unnamedplus
-"end if
+" use clipboard register ('+' and '*') for all yank, delete, change
+if (has('mac') && executable('pbcopy')) || (has('unix') && executable('xsel'))
+  set clipboard&
+  set clipboard+=unnamed
+  set clipboard+=unnamedplus
+endif
 " GNOMEの場合に256色表示を有効にする
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
