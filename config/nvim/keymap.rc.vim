@@ -1,5 +1,5 @@
 " 挿入モードからノーマルモード
-inoremap jj <Esc>
+inoremap <C-J> <Esc>
 
 " ファイルの直前までの絶対パスを補完
 cnoremap <C-X> <C-R>=expand("%:p:h")<CR>/
