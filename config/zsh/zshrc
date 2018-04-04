@@ -210,6 +210,11 @@ esac
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# SDKMAN
+if [[ -d $HOME/.sdkman ]]; then
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 ## miniconda
 #CONDA_VERSION="miniconda3-latest"
 ## If you only use conda (don't use pyenv), you should set path
