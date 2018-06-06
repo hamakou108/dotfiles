@@ -223,3 +223,6 @@ fi
 #alias activate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/activate"
 #alias deactivate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/deactivate"
 
+# pipenv
+# to avoid the bug on macOS
+export LC_ALL=en_US.UTF-8
