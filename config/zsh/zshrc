@@ -226,3 +226,5 @@ fi
 # pipenv
 # to avoid the bug on macOS
 export LC_ALL=en_US.UTF-8
+# enable auto completion
+eval "$(pipenv --completion)"
