@@ -205,16 +205,22 @@ esac
 # vim:set ft=zsh:
 
 ########################################
-# anyenv
-# setting path
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+# anyenv (https://github.com/riywo/anyenv)
+# if anyenv is downloaded
+if [[ -d $HOME/.sdkman ]]; then
+  # setting path
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
 
-# SDKMAN
+########################################
+# SDKMAN (https://get.sdkman.io)
+# if SDKMAN is downloaded
 if [[ -d $HOME/.sdkman ]]; then
   source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
+########################################
 ## miniconda
 #CONDA_VERSION="miniconda3-latest"
 ## If you only use conda (don't use pyenv), you should set path
@@ -223,8 +229,14 @@ fi
 #alias activate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/activate"
 #alias deactivate="source $PYENV_ROOT/versions/${CONDA_VERSION}/bin/deactivate"
 
+########################################
 # pipenv
-# to avoid the bug on macOS
-export LC_ALL=en_US.UTF-8
-# enable auto completion
-eval "$(pipenv --completion)"
+# if pipenv is installed and executable
+if [[ -x $(whence pipenv) ]]; then
+  # to avoid the bug on macOS
+  if [[ ${OSTYPE} = darwin ]]; then
+    export LC_ALL=en_US.UTF-8
+  fi
+  # enable auto completion
+  eval "$(pipenv --completion)"
+fi
