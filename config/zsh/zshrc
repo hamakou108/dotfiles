@@ -234,7 +234,7 @@ fi
 # if pipenv is installed and executable
 if [[ -x $(whence pipenv) ]]; then
   # to avoid the bug on macOS
-  if [[ ${OSTYPE} = darwin ]]; then
+  if [[ ${OSTYPE} = darwin* ]]; then
     export LC_ALL=en_US.UTF-8
   fi
   # enable auto completion
