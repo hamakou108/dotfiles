@@ -55,7 +55,8 @@ au BufWritePre * call <SID>remove_dust()
 
 " <その他>
 " マウス入力の有効化
-:set mouse=a
+" do not use this setting because you can't use the clipboard in remote server
+":set mouse=a
 " ステータス行の表示と設定
 :set laststatus=2
 ":set statusline=%<%f%m%r%h%w\ LINE=%l/%L\ COLUMN=%c
