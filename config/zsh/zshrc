@@ -206,8 +206,8 @@ esac
 
 ########################################
 # anyenv (https://github.com/riywo/anyenv)
-# if anyenv is downloaded
-if [[ -d $HOME/.sdkman ]]; then
+# if repository is cloned on home directory named ".anyenv"
+if [[ -d $HOME/.anyenv ]]; then
   # setting path
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
@@ -215,7 +215,7 @@ fi
 
 ########################################
 # SDKMAN (https://get.sdkman.io)
-# if SDKMAN is downloaded
+# if SDKMAN is downloaded (curl -s "https://get.sdkman.io" | bash)
 if [[ -d $HOME/.sdkman ]]; then
   source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
