@@ -29,10 +29,10 @@ repo = 'tpope/vim-obsession'
 
 # snippet expansion ('deoppet.nvim' which is improved version of
 # 'neosnippet.vim' is comming soon!)
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['vim-snippets']
-on_i = 1
+#[[plugins]]
+#repo = 'Shougo/neosnippet.vim'
+#depends = ['vim-snippets']
+#on_i = 1
 
 # syntax hilighting
 [[plugins]]
