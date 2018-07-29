@@ -82,7 +82,8 @@ if $TERM == 'screen'
   set t_Co=256
 endif
 " colorschemeの設定
-colorscheme jellybeans
+set background=dark
+colorscheme hybrid
 
 " Neovim
 if has('nvim')
