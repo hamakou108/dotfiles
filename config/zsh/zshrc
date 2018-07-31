@@ -147,6 +147,7 @@ fi
 # Tmux
 alias tmux='tmux -2'
 export TERM=xterm-256color
+#export TERM=screen-256color
 
 ########################################
 # SSH
