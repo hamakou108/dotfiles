@@ -1,3 +1,4 @@
+# deoplete settings
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = 'has("nvim")'
@@ -23,16 +24,40 @@ hook_source = '''
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 '''
 
+# snippet expansion
+# Tips: 'deoppet.nvim' which is improved version of 'neosnippet.vim' is comming soon!
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+on_event = 'InsertEnter'
+hook_source = '''
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
 # save vim session (type :Obsession to save)
 [[plugins]]
 repo = 'tpope/vim-obsession'
-
-# snippet expansion ('deoppet.nvim' which is improved version of
-# 'neosnippet.vim' is comming soon!)
-#[[plugins]]
-#repo = 'Shougo/neosnippet.vim'
-#depends = ['vim-snippets']
-#on_i = 1
 
 # syntax hilighting
 [[plugins]]
