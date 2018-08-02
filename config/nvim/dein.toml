@@ -10,7 +10,3 @@ repo = 'flazz/vim-colorschemes'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
-
-# snippet repository
-[[plugins]]
-repo = 'honza/vim-snippets'
