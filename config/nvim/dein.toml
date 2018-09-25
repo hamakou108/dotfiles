@@ -6,7 +6,8 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 
-# asyncronous execution library (for deoplete)
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
