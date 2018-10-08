@@ -14,5 +14,3 @@ endif
 if expand("%:t") =~ ".*\.md"
   :set wrap
 endif
-
-au BufRead,BufNewFile *.md set filetype=markdown

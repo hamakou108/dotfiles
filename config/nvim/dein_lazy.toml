@@ -1,15 +1,18 @@
-# save vim session (type :Obsession to save)
 [[plugins]]
 repo = 'tpope/vim-obsession'
+on_event = ['CmdlineEnter']
 
-# syntax hilighting
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown']
 
-#
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
-# preview markdown
 [[plugins]]
 repo = 'kannokanno/previm'
+on_event = ['CmdlineEnter']
+on_ft = ['markdown', 'rrst', 'asciidoc']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_event = ['CmdlineEnter']
+on_ft = ['markdown', 'rrst', 'asciidoc']
+
