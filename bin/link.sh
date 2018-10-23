@@ -5,9 +5,10 @@ dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
 ln -nsf ${dotfiles_dir}/config/nvim ~/.config/
 ln -nsf ${dotfiles_dir}/config/nvim ~/.vim
 ln -sf ${dotfiles_dir}/config/nvim/init.vim ~/.vimrc
-ln -sf ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
 ln -sf ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
 ln -sf ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
+ln -sf ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
+ln -sf ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
 
 # update profiles
 touch ~/.bash_profile
