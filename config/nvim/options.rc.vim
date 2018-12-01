@@ -85,6 +85,9 @@ endif
 set background=dark
 colorscheme hybrid
 
+" enable virtual editing in visual-block mode
+set virtualedit+=block
+
 " Neovim
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
