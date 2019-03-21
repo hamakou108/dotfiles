@@ -1,94 +1,114 @@
-" <表示>
-" 構文毎の色分け
-:syntax on
-" 文番号の表示
-:set number
-" 不可視文字の表示
-:set list
-:set listchars=tab:>-,extends:>,precedes:<,trail:-
-"対応する括弧の強調表示
-:set showmatch
-" 上下・左右の視界の確保
+" Display {{{
+" No wrap by default
+:set nowrap
+
+" Display as much as possible of the last line in a window
+:set display+=lastline
+
+" The minimal number of screen lines or columns to keep around the cursor
 :set scrolloff=2
 :set sidescrolloff=4
 
-" remove dust before saving the file
+" Syntax highlighting
+:syntax on
+
+" Colorscheme
+:set background=dark
+:colorscheme hybrid
+
+" Show whitespace characters like tabs
+:set list
+:set listchars=tab:>-,extends:>,precedes:<,trail:-
+
+" When a bracket is inserted, briefly jump to the matching one
+:set showmatch
+:set matchtime=1
+
+" Print the line number in front of each line
+:set number
+
+" Status line
+:set laststatus=2
+:set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ LINE=%l/%L\ COLUMN=%c
+"}}}
+
+" Searching {{{
+" Incremental and highligh search
+:set incsearch
+:set hlsearch
+
+" Search pattern for upper case
+:set ignorecase
+:set smartcase
+"}}}
+
+" Moving {{{
+" Allow specified keys to move to the previous/next line
+:set whichwrap=b,s,h,l,<,>,[,],~
+"}}}
+
+" Editting {{{
+" multi-byte character formatting
+:set formatoptions+=mM
+
+" Disable automatically insert the current comment leader
+:set formatoptions-=or
+
+" Allow Backspacing in Insert mode
+:set backspace=indent,eol,start
+
+" indenting and tabs by default
+:set smartindent
+:set expandtab
+:set shiftwidth=2
+:set tabstop=2
+:set softtabstop=2
+
+" Remove dust before saving the file
 function! s:remove_dust()
   let cursor = getpos(".")
-    " remove space in the end of the line
+    " Remove spaces in the end of the line
     %s/\s\+$//ge
-    " convert tab character into space
+    " Convert tabs into spaces
     "%s/\t/  /ge
   call setpos(".", cursor)
   unlet cursor
 endfunction
 au BufWritePre * call <SID>remove_dust()
+"}}}
 
-" <検索>
-" インクリメンタルサーチの有効化
-:set incsearch
-"ヒット結果のハイライト表示
-:set hlsearch
-" 検索時に大文字小文字を区別しない
-:set ignorecase
-" 検索文字が大文字なら小文字を検索しない
-:set smartcase
+" Completion {{{
+" The maximum number of items to show in the popup menu for Insert mode completion
+:set pumheight=10
+"}}}
 
-" <移動>
-" 折り返しの無効化
-:set nowrap
+" Visual {{{
+" enable virtual editing in visual-block mode
+:set virtualedit+=block
+"}}}
 
-" 行を跨いでの移動
-:set whichwrap=b,s,h,l,<,>,[,],~
+" Command line {{{
+:set wildmenu
+:set wildmode=longest,list,full
+"}}}
 
-" <Tabとインデント>
-" インデント，行末，行頭でのbackspaceを有効化
-:set backspace=indent,eol,start
-" オートインデントの有効化
-:set smartindent
-" Tabをスペースに変更
-:set expandtab
-:set tabstop=2
-:set softtabstop=2
-" インデント幅の設定
-:set shiftwidth=2
-
-" <その他>
-" マウス入力の有効化
-" do not use this setting because you can't use the clipboard in remote server
-":set mouse=a
-" ステータス行の表示と設定
-:set laststatus=2
-":set statusline=%<%f%m%r%h%w\ LINE=%l/%L\ COLUMN=%c
-:set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ LINE=%l/%L\ COLUMN=%c
-" 文字のエンコーディング
-" :set encoding=utf-8
+" File {{{
+" Character encoding (see also ":help encoding-names")
 :set fileencoding=utf-8
 :set fileencodings=utf-8,iso-2022-jp,cp932,sjjs,euc-jp
-" 改行コードのエンコーディング
-:set fileformat=unix "max, dos
-" use clipboard register ('+' and '*') for all yank, delete, change
+"}}}
+
+" Others {{{
+" Use clipboard register ('+' and '*') for all yank, delete, change
 if (has('mac') && executable('pbcopy')) || (has('unix') && executable('xsel'))
-  set clipboard&
-  set clipboard+=unnamed
-  set clipboard+=unnamedplus
+  :set clipboard&
+  :set clipboard+=unnamed
+  :set clipboard+=unnamedplus
 endif
-" GNOMEの場合に256色表示を有効にする
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-" ssh接続などで256色表示を有効にする
-if $TERM == 'screen'
-  set t_Co=256
-endif
-" colorschemeの設定
-set background=dark
-colorscheme hybrid
+"}}}
 
-" enable virtual editing in visual-block mode
-set virtualedit+=block
-
-" Neovim
+" Neovim {{{
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
+"}}}

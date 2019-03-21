@@ -1,23 +1,18 @@
-" 挿入モードからノーマルモード
+" Insert mode {{{
+" Go back to Normal mode
 inoremap <C-J> <Esc>
+"}}}
 
-" ファイルの直前までの絶対パスを補完
-cnoremap <C-X> <C-R>=expand("%:p:h")<CR>/
-
-" ファイルの絶対パスを補完
-cnoremap <C-Z> <C-R>=expand("%:p:r")<CR>
-
-" 表示行で移動する．
+" Normal mode {{{
+" When 'wrap' on, go N screen lines up or down
 nnoremap j gj
 nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up> gk
 
-" 日本語の行の連結時には空白を入力しない．
-set formatoptions+=mM
-
-" 画面最後の行をできる限り表示する．
-set display+=lastline
+" Yank the characters under the cursor until the end of the line
+nnoremap Y y$
+"}}}
 
 " for denite
 "nmap [denite] <Nop>
