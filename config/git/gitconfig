@@ -1,0 +1,24 @@
+[user]
+	name = hamakou108
+	email = kosuke1602177mteitm19@gmail.com
+[core]
+  #whitespace = cr-at-eol
+	editor = nvim
+	quotepath = false
+	autocrlf = false
+	ignorecase = false
+	pager = nkf -w | LESSCHARSET=utf-8 less
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[merge]
+	ff = false
+[pull]
+	ff = only
+[diff]
+	wsErrorHighlight = all
+[color "diff"]
+	whitespace = red reverse
+
