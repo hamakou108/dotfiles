@@ -1,15 +1,31 @@
 #!/bin/bash
 
+function make_link () {
+    src=$1
+    dst=$2
+
+    if [[ -e $dst && ! -L $dst ]]; then
+        echo "$dst is not a symbolic link"
+        return 1
+    fi
+
+    if [[ -f $src ]]; then
+        ln -sf $src $dst
+    elif [[ -d $src ]]; then
+        ln -nsf $src $dst
+    fi
+}
+
 # create links to configuration files
 dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
-ln -nsf ${dotfiles_dir}/config/nvim ~/.config/
-ln -nsf ${dotfiles_dir}/config/nvim ~/.vim
-ln -sf ${dotfiles_dir}/config/nvim/init.vim ~/.vimrc
-ln -sf ${dotfiles_dir}/config/git/gitconfig ~/.gitconfig
-ln -sf ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
-ln -sf ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
-ln -sf ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
-ln -sf ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
+make_link ${dotfiles_dir}/config/nvim           ~/.config/nvim
+make_link ${dotfiles_dir}/config/nvim           ~/.vim
+make_link ${dotfiles_dir}/config/nvim/init.vim  ~/.vimrc
+make_link ${dotfiles_dir}/config/git/gitconfig  ~/.gitconfig
+make_link ${dotfiles_dir}/config/zsh/zshrc      ~/.zshrc
+make_link ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
+make_link ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
+make_link ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
 
 # update profiles
 touch ~/.bash_profile
