@@ -2,6 +2,9 @@
 # http://mollifier.mit-license.org/
 
 ########################################
+# refs http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-typeset
+typeset -U PATH path MANPATH manpath
+
 # 環境変数
 export LANG=en_US.UTF-8
 
@@ -203,6 +206,28 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+# GNU command utilities
+# The expression '(N-/)' represents the path is a directory or a symbolic link
+# which points to a directory (cf. zsh man page 14.8.7 Glob Qualifiers)
+path=(
+    /usr/local/opt/coreutils/libexec/gnubin(N-/) # coreutils
+    /usr/local/opt/ed/libexec/gnubin(N-/)        # ed
+    /usr/local/opt/findutils/libexec/gnubin(N-/) # findutils
+    /usr/local/opt/gnu-sed/libexec/gnubin(N-/)   # sed
+    /usr/local/opt/gnu-tar/libexec/gnubin(N-/)   # tar
+    /usr/local/opt/grep/libexec/gnubin(N-/)      # grep
+    ${path}
+)
+manpath=(
+    /usr/local/opt/coreutils/libexec/gnuman(N-/) # coreutils
+    /usr/local/opt/ed/libexec/gnuman(N-/)        # ed
+    /usr/local/opt/findutils/libexec/gnuman(N-/) # findutils
+    /usr/local/opt/gnu-sed/libexec/gnuman(N-/)   # sed
+    /usr/local/opt/gnu-tar/libexec/gnuman(N-/)   # tar
+    /usr/local/opt/grep/libexec/gnuman(N-/)      # grep
+    ${manpath}
+)
 
 ########################################
 # anyenv (https://github.com/riywo/anyenv)
