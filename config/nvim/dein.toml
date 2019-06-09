@@ -15,7 +15,7 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
-hook_source = '''
+hook_add = '''
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -24,10 +24,10 @@ nmap ga <Plug>(EasyAlign)
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-hook_source = '''
-let g:airline_theme = 'hybrid'
-'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme = 'hybrid'
+'''
 
