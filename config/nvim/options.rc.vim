@@ -29,7 +29,7 @@
 
 " Status line
 :set laststatus=2
-:set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ LINE=%l/%L\ COLUMN=%c
+":set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ LINE=%l/%L\ COLUMN=%c
 "}}}
 
 " Searching {{{
@@ -112,3 +112,4 @@ if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 "}}}
+
