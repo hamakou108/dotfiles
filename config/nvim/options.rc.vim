@@ -40,6 +40,9 @@
 " Search pattern for upper case
 :set ignorecase
 :set smartcase
+
+" Search help about the word under cursor (use "K").
+:set keywordprg=:help
 "}}}
 
 " Moving {{{
