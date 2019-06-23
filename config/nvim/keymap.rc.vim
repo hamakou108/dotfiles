@@ -1,3 +1,6 @@
+" Time in milliseconds to wait for a mapped sequence to complete
+:set timeoutlen=3000
+
 " Insert mode {{{
 " Go back to Normal mode
 inoremap <C-J> <Esc>
@@ -14,7 +17,3 @@ nnoremap <Up> gk
 nnoremap Y y$
 "}}}
 
-" for denite
-"nmap [denite] <Nop>
-"nmap <C-J> [denite]
-"nmap <silent> [denite]<C-P> :<C-u>Denite file_rec -highlight-mode-insert=Search<CR>
