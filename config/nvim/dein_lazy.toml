@@ -68,8 +68,12 @@ repo = 'tpope/vim-obsession'
 on_event = ['CmdlineEnter']
 
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
+repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
 
 [[plugins]]
 repo = 'kannokanno/previm'
