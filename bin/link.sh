@@ -26,6 +26,7 @@ make_link ${dotfiles_dir}/config/zsh/zshrc      ~/.zshrc
 make_link ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
 make_link ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
 make_link ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
+make_link ${dotfiles_dir}/bin/ide.sh            ~/ide.sh
 
 # update profiles
 touch ~/.bash_profile

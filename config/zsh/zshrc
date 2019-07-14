@@ -151,6 +151,9 @@ fi
 alias tmux='tmux -2'
 export TERM=screen-256color
 
+# split window like ide
+alias ide='~/ide.sh'
+
 ########################################
 # SSH
 alias ssh='TERM=screen ssh'
