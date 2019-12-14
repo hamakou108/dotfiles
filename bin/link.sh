@@ -9,6 +9,10 @@ function make_link () {
         return 1
     fi
 
+    if [[ ! -e $(dirname $dst) ]]; then
+        mkdir -p $(dirname $dst)
+    fi
+
     if [[ -f $src ]]; then
         ln -sf $src $dst
     elif [[ -d $src ]]; then
