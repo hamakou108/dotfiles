@@ -192,3 +192,10 @@ if [[ -x $(whence pipenv) ]]; then
   eval "$(pipenv --completion)"
 fi
 
+################################################################################
+# hub
+# cf. https://github.com/github/hub
+if [[ -x $(whence hub) ]]; then
+  eval "$(hub alias -s)"
+fi
+
