@@ -1,6 +1,6 @@
 [user]
-	name = hamakou108
-	email = kosuke1602177mteitm19@gmail.com
+	name = Bob
+	email = bob@example.com
 [core]
   #whitespace = cr-at-eol
 	editor = nvim
@@ -21,4 +21,3 @@
 	wsErrorHighlight = all
 [color "diff"]
 	whitespace = red reverse
-
