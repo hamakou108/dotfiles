@@ -138,8 +138,6 @@ fi
 export XDG_CONFIG_HOME=$HOME/.config
 
 ################################################################################
-# vim:set ft=zsh:
-
 # GNU command utilities
 # The expression '(N-/)' represents the path is a directory or a symbolic link
 # which points to a directory (cf. zsh man page 14.8.7 Glob Qualifiers)
