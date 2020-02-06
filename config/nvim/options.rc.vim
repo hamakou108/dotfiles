@@ -101,6 +101,11 @@ au BufWritePre * call <SID>remove_dust()
 :set fileencodings=utf-8,iso-2022-jp,cp932,sjjs,euc-jp
 "}}}
 
+" Buffer {{{
+" keep the changed buffer without saving it
+:set hidden
+"}}}
+
 " Others {{{
 " Use clipboard register ('+' and '*') for all yank, delete, change
 if (has('mac') && executable('pbcopy')) || (has('unix') && executable('xsel'))
