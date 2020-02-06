@@ -1,5 +1,7 @@
 # License : MIT
 # http://mollifier.mit-license.org/
+#
+# Note: only for MacOS
 
 ################################################################################
 # prevent duplicate values from being set
@@ -8,18 +10,9 @@ typeset -U PATH path MANPATH manpath
 
 export LANG=en_US.UTF-8
 
-alias la='ls -a'
-alias ll='ls -l'
-
-case ${OSTYPE} in
-  darwin*) # Mac
-    export CLICOLOR=1
-    alias ls='ls -G -F'
-    ;;
-  linux*) # Linux
-    alias ls='ls -F --color=auto'
-    ;;
-esac
+alias ls='ls -FG'
+alias la='ls -aFG'
+alias ll='ls -lFG'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -106,23 +99,23 @@ alias ide='~/ide.sh'
 # SSH
 alias ssh='TERM=screen ssh'
 
-# ssh-agent
-SSH_ROOT="$HOME/.ssh/"
-SSH_AGENT_FILE="${SSH_ROOT}ssh-agent-info"
-#AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
-
-# Start ssh-agent if not exists ssh-agent process
-if ! ps ux | grep "ssh-agent$" | grep -v "grep" >/dev/null 2>&1; then
-  ssh-agent > $SSH_AGENT_FILE
-  source $SSH_AGENT_FILE
-fi
-
-# Add unregistered keys to ssh-agent
-key_file_unregistered=()
-for key_file in `ls "$SSH_ROOT" | grep "^id_rsa@" | grep -v "pub$"`; do
-  [[ -z $(ssh-add -L | grep $key_file) ]] && key_file_unregistered+=(${SSH_ROOT}${key_file})
-done
-ssh-add ${key_file_unregistered[@]}
+## ssh-agent
+#SSH_ROOT="$HOME/.ssh/"
+#SSH_AGENT_FILE="${SSH_ROOT}ssh-agent-info"
+##AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
+#
+## Start ssh-agent if not exists ssh-agent process
+#if ! ps ux | grep "ssh-agent$" | grep -v "grep" >/dev/null 2>&1; then
+#  ssh-agent > $SSH_AGENT_FILE
+#  source $SSH_AGENT_FILE
+#fi
+#
+## Add unregistered keys to ssh-agent
+#key_file_unregistered=()
+#for key_file in `ls "$SSH_ROOT" | grep "^id_rsa@" | grep -v "pub$"`; do
+#  [[ -z $(ssh-add -L | grep $key_file) ]] && key_file_unregistered+=(${SSH_ROOT}${key_file})
+#done
+#ssh-add ${key_file_unregistered[@]}
 
 #if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
 #  ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
@@ -169,12 +162,16 @@ manpath=(
     ${manpath}
 )
 
+coreutils_path="/usr/local/opt/coreutils/libexec/gnubin"
+if [[ -a ${coreutils} ]]; then
+  alias ls='ls -F --color=auto'
+  alias la='ls -aF --color=auto'
+  alias ll='ls -lF --color=auto'
+fi
+
 ################################################################################
-# anyenv (https://github.com/riywo/anyenv)
-# if repository is cloned on home directory named ".anyenv"
-if [[ -d $HOME/.anyenv ]]; then
-  # setting path
-  export PATH="$HOME/.anyenv/bin:$PATH"
+# anyenv (https://github.com/anyenv/anyenv)
+if [[ -x $(whence anyenv) ]]; then
   eval "$(anyenv init -)"
 fi
 
@@ -196,3 +193,4 @@ if [[ -x $(whence pipenv) ]]; then
   # enable auto completion
   eval "$(pipenv --completion)"
 fi
+
