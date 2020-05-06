@@ -31,3 +31,6 @@ hook_add = '''
 let g:airline_theme = 'hybrid'
 '''
 
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
