@@ -32,6 +32,10 @@
 ":set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ LINE=%l/%L\ COLUMN=%c
 "}}}
 
+" Window {{{
+:set splitright
+"}}}
+
 " Searching {{{
 " Incremental and highligh search
 :set incsearch
