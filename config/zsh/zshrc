@@ -199,3 +199,10 @@ if [[ -x $(whence hub) ]]; then
   eval "$(hub alias -s)"
 fi
 
+################################################################################
+# awscli@1 (brew)
+path=(
+    /usr/local/opt/awscli@1/bin(N-/)
+    ${path}
+)
+source /usr/local/opt/awscli@1/libexec/bin/aws_zsh_completer.sh
