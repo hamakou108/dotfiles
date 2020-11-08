@@ -193,13 +193,6 @@ if [[ -x $(whence pipenv) ]]; then
 fi
 
 ################################################################################
-# hub
-# cf. https://github.com/github/hub
-if [[ -x $(whence hub) ]]; then
-  eval "$(hub alias -s)"
-fi
-
-################################################################################
 # awscli@1 (brew)
 path=(
     /usr/local/opt/awscli@1/bin(N-/)
