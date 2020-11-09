@@ -44,6 +44,7 @@ call denite#custom#var('file/rec', 'command',
 " Change sorters.
 call denite#custom#source(
   \ 'file/rec', 'sorters', ['sorter/sublime'])
+let s:menus = {}
 let s:menus.my_commands = {
   \ 'description': 'Example commands'
   \ }
