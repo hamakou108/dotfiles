@@ -1,11 +1,6 @@
 " Time in milliseconds to wait for a mapped sequence to complete
 :set timeoutlen=3000
 
-" Insert mode {{{
-" Go back to Normal mode
-inoremap <C-J> <Esc>
-"}}}
-
 " Normal mode {{{
 " When 'wrap' on, go N screen lines up or down
 nnoremap j gj
