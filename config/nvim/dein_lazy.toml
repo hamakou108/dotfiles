@@ -287,6 +287,10 @@ repo = 'junegunn/gv.vim'
 on_event = 'CmdlineEnter'
 
 [[plugins]]
+repo = 'vim-test/vim-test'
+on_event = 'BufRead'
+
+[[plugins]]
 repo = 'tpope/vim-obsession'
 on_event = ['CmdlineEnter']
 
