@@ -272,6 +272,21 @@ repo = 'honza/vim-snippets'
 on_event = 'InsertEnter'
 
 [[plugins]]
+repo = "airblade/vim-gitgutter"
+on_event = 'BufRead'
+hook_post_source = '''
+set updatetime=300
+'''
+
+[[plugins]]
+repo = "tpope/vim-fugitive"
+on_event = 'CmdlineEnter'
+
+[[plugins]]
+repo = 'junegunn/gv.vim'
+on_event = 'CmdlineEnter'
+
+[[plugins]]
 repo = 'tpope/vim-obsession'
 on_event = ['CmdlineEnter']
 
