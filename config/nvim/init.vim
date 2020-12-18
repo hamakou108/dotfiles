@@ -3,6 +3,10 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+" Map space key to mapleader. Mainly use mapleader to call plugin feature.
+" Note: This definition must come before defining key mappings of plugins.
+let mapleader = "\<Space>"
+
 " dein settings {{{
 " define the install directory of dein.vim (XDG_CACHE_HOME is for Neovim)
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
@@ -41,3 +45,4 @@ runtime! options.rc.vim
 runtime! keymap.rc.vim
 runtime! filetype.rc.vim
 " }}}
+

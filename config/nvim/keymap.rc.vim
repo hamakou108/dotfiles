@@ -10,5 +10,10 @@ nnoremap <Up> gk
 
 " Yank the characters under the cursor until the end of the line
 nnoremap Y y$
+
+" Disable rarely used key
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q gq
 "}}}
 
