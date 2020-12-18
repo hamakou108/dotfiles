@@ -108,14 +108,11 @@ function! s:defx_my_settings() abort
   \ defx#do_action('print')
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
-
-  " Custom Mapping
-  nnoremap <silent><buffer><expr> ot
-  \ defx#do_action('tabnew')
 endfunction
 
 nnoremap [defx] <Nop>
-nmap <Space>f [defx]
-nmap <silent> [defx]i :<C-u>Defx -columns=git:icons:filename:type `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nmap <Leader>f [defx]
+nmap <silent> [defx]c :<C-u>Defx -columns=git:icons:filename:type `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nmap <silent> [defx]r :<C-u>Defx -columns=git:icons:filename:type<CR>
 '''
 
