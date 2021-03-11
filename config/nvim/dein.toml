@@ -112,7 +112,7 @@ endfunction
 
 nnoremap [defx] <Nop>
 nmap <Leader>f [defx]
-nmap <silent> [defx]c :<C-u>Defx -columns=git:icons:filename:type `expand('%:p:h')` -search=`expand('%:p')`<CR>
-nmap <silent> [defx]r :<C-u>Defx -columns=git:icons:filename:type<CR>
+nmap <silent> [defx]c :<C-u>Defx -columns=git:indent:icons:filename:type `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nmap <silent> [defx]r :<C-u>Defx -columns=git:indent:icons:filename:type<CR>
 '''
 
