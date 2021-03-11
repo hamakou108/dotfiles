@@ -171,6 +171,10 @@ fi
 # anyenv (https://github.com/anyenv/anyenv)
 if [[ -x $(whence anyenv) ]]; then
   eval "$(anyenv init -)"
+  if [[ ! -d $(anyenv root)/plugins/anyenv-update ]]; then
+    mkdir -p $(anyenv root)/plugins
+    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+  fi
 fi
 
 ################################################################################
