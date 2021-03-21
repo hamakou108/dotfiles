@@ -263,6 +263,8 @@ xmap [coc]x <Plug>(coc-convert-snippet)
 
 
 let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
   \ 'coc-phpls',
   \ 'coc-snippets'
 \]
