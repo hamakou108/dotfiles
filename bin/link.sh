@@ -27,6 +27,7 @@ make_link ${dotfiles_dir}/config/nvim           ~/.vim
 make_link ${dotfiles_dir}/config/nvim/init.vim  ~/.vimrc
 make_link ${dotfiles_dir}/config/git/gitconfig  ~/.gitconfig
 make_link ${dotfiles_dir}/config/zsh/zshrc      ~/.zshrc
+make_link ${dotfiles_dir}/config/fish           ~/.config/fish
 make_link ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
 make_link ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
 make_link ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
