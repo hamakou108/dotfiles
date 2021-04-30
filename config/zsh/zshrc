@@ -99,28 +99,6 @@ alias ide='~/ide.sh'
 # SSH
 alias ssh='TERM=screen ssh'
 
-## ssh-agent
-#SSH_ROOT="$HOME/.ssh/"
-#SSH_AGENT_FILE="${SSH_ROOT}ssh-agent-info"
-##AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
-#
-## Start ssh-agent if not exists ssh-agent process
-#if ! ps ux | grep "ssh-agent$" | grep -v "grep" >/dev/null 2>&1; then
-#  ssh-agent > $SSH_AGENT_FILE
-#  source $SSH_AGENT_FILE
-#fi
-#
-## Add unregistered keys to ssh-agent
-#key_file_unregistered=()
-#for key_file in `ls "$SSH_ROOT" | grep "^id_rsa@" | grep -v "pub$"`; do
-#  [[ -z $(ssh-add -L | grep $key_file) ]] && key_file_unregistered+=(${SSH_ROOT}${key_file})
-#done
-#ssh-add ${key_file_unregistered[@]}
-
-#if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $AGENT_SOCK_FILE ]; then
-#  ln -sf $SSH_AUTH_SOCK $AGENT_SOCK_FILE && export SSH_AUTH_SOCK=$AGENT_SOCK_FILE
-#fi
-
 ################################################################################
 # NeoVim
 # alias
