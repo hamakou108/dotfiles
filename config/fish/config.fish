@@ -19,6 +19,14 @@ alias mkdir='mkdir -p'
 alias sudo='sudo '
 
 ################################################################################
+# Fisher
+# After fisher command has been sourced, run `fisher update` manually. Don't
+# write `fisher update` in this file, or Fish would get into infinite loop.
+if test ! (type fisher >/dev/null 2>&1)
+    curl -sL https://git.io/fisher | source
+end
+
+################################################################################
 # Tmux
 alias tmux='tmux -2'
 set -x TERM screen-256color
