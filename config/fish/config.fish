@@ -45,6 +45,10 @@ if test (type nvim)
     alias vi=(which nvim)
     alias vim=(which nvim)
     alias editor=(which nvim)
+    function vimdiff
+        set -l nvim_path (which nvim)
+        command $nvim_path -d $argv
+    end
 end
 
 # XDG_CONFIG_HOME

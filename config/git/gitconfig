@@ -15,10 +15,12 @@
 	required = true
 [merge]
 	ff = false
+	tool = vimdiff
 [pull]
 	ff = only
 [diff]
 	wsErrorHighlight = all
+	tool = vimdiff
 [color "diff"]
 	whitespace = red reverse
 	meta = 11
