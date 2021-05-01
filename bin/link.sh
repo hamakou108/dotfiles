@@ -22,16 +22,17 @@ function make_link () {
 
 # create links to configuration files
 dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
-make_link ${dotfiles_dir}/config/nvim           ~/.config/nvim
-make_link ${dotfiles_dir}/config/nvim           ~/.vim
-make_link ${dotfiles_dir}/config/nvim/init.vim  ~/.vimrc
-make_link ${dotfiles_dir}/config/git/gitconfig  ~/.gitconfig
-make_link ${dotfiles_dir}/config/zsh/zshrc      ~/.zshrc
-make_link ${dotfiles_dir}/config/fish           ~/.config/fish
-make_link ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
-make_link ${dotfiles_dir}/config/oni/config.tsx ~/.config/oni/config.tsx
-make_link ${dotfiles_dir}/config/hyper/hyper.js ~/.hyper.js
-make_link ${dotfiles_dir}/bin/ide.sh            ~/ide.sh
+make_link ${dotfiles_dir}/config/nvim              ~/.config/nvim
+make_link ${dotfiles_dir}/config/nvim              ~/.vim
+make_link ${dotfiles_dir}/config/nvim/init.vim     ~/.vimrc
+make_link ${dotfiles_dir}/config/git/gitconfig     ~/.gitconfig
+make_link ${dotfiles_dir}/config/zsh/zshrc         ~/.zshrc
+make_link ${dotfiles_dir}/config/fish/config.fish  ~/.config/fish/config.fish
+make_link ${dotfiles_dir}/config/fish/fish_plugins ~/.config/fish/fish_plugins
+make_link ${dotfiles_dir}/config/tmux/tmux.conf    ~/.tmux.conf
+make_link ${dotfiles_dir}/config/oni/config.tsx    ~/.config/oni/config.tsx
+make_link ${dotfiles_dir}/config/hyper/hyper.js    ~/.hyper.js
+make_link ${dotfiles_dir}/bin/ide.sh               ~/ide.sh
 
 # update profiles
 touch ~/.bash_profile
