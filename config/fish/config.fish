@@ -22,7 +22,7 @@ alias sudo='sudo '
 # Fisher
 # After fisher command has been sourced, run `fisher update` manually. Don't
 # write `fisher update` in this file, or Fish would get into infinite loop.
-if test ! (type fisher >/dev/null 2>&1)
+if ! type -q fisher
     curl -sL https://git.io/fisher | source
 end
 
@@ -41,7 +41,7 @@ alias ssh='set -x TERM screen ssh'
 ################################################################################
 # NeoVim
 # alias
-if test (type nvim)
+if type -q nvim
     alias vi=(which nvim)
     alias vim=(which nvim)
     alias editor=(which nvim)
@@ -71,7 +71,7 @@ end
 
 ################################################################################
 # anyenv (https://github.com/anyenv/anyenv)
-if test (type anyenv)
+if type -q anyenv
     anyenv init - fish | source
     if test ! -d (anyenv root)/plugins/anyenv-update
         mkdir -p (anyenv root)/plugins
@@ -82,7 +82,7 @@ end
 ################################################################################
 # pipenv
 # if pipenv is installed and executable
-if test (type pipenv)
+if type -q pipenv
     # to avoid the bug on macOS
     # cf. https://pipenv-ja.readthedocs.io/ja/translate-ja/diagnose.html#valueerror-unknown-locale-utf-8
     if test (uname) = 'Darwin'
@@ -96,7 +96,7 @@ end
 # awscli@1 (brew)
 # cf. https://github.com/aws/aws-cli/issues/1079
 fish_add_path /usr/local/opt/awscli@1/bin
-if test (type aws_completer)
+if type -q aws_completer
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
 
