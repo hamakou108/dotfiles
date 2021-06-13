@@ -267,6 +267,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-phpls',
+  \ 'coc-pyright',
   \ 'coc-snippets'
 \]
 " Get licence key from shell environment variable
