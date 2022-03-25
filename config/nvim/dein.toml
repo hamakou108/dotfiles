@@ -2,7 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'flazz/vim-colorschemes'
+repo = 'ulwlu/elly.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -28,7 +28,7 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'elly'
 '''
 
 [[plugins]]
