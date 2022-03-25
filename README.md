@@ -35,7 +35,7 @@ Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) and set it in your
 
 ```
 brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
+brew install font-hack-nerd-font
 ```
 
 #### coc.nvim
