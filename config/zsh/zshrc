@@ -146,16 +146,6 @@ if [[ -a ${coreutils} ]]; then
 fi
 
 ################################################################################
-# anyenv (https://github.com/anyenv/anyenv)
-if [[ -x $(whence anyenv) ]]; then
-  eval "$(anyenv init -)"
-  if [[ ! -d $(anyenv root)/plugins/anyenv-update ]]; then
-    mkdir -p $(anyenv root)/plugins
-    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-  fi
-fi
-
-################################################################################
 # SDKMAN (https://get.sdkman.io)
 # if SDKMAN is downloaded (curl -s "https://get.sdkman.io" | bash)
 if [[ -d $HOME/.sdkman ]]; then
@@ -181,3 +171,8 @@ path=(
     ${path}
 )
 source /usr/local/opt/awscli@1/libexec/bin/aws_zsh_completer.sh
+
+################################################################################
+# asdf
+/usr/local/opt/asdf/libexec/asdf.sh
+
