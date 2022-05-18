@@ -48,5 +48,6 @@ export PHP_INTELEPHENSE_LICENCE_KEY='YOUR_LICENCE_KEY'
 
 ## Acknowledgments
 
-[yymm/.dotfiles](https://github.com/yymm/.dotfiles/tree/master/config/nvim) is very helpful to create settings.
+- [yymm/.dotfiles](https://github.com/yymm/.dotfiles/tree/master/config/nvim)
+- [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
 
