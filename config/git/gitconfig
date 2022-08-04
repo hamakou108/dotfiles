@@ -13,7 +13,6 @@
 	process = git-lfs filter-process
 	required = true
 [merge]
-	ff = false
 	tool = vimdiff
 [pull]
 	ff = only
