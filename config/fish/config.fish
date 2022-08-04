@@ -83,14 +83,6 @@ if type -q pipenv
 end
 
 ################################################################################
-# awscli@1 (brew)
-# cf. https://github.com/aws/aws-cli/issues/1079
-fish_add_path /usr/local/opt/awscli@1/bin
-if type -q aws_completer
-    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-end
-
-################################################################################
 # asdf
 source /usr/local/opt/asdf/libexec/asdf.fish
 
