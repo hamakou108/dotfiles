@@ -7,7 +7,6 @@
 	quotepath = false
 	autocrlf = false
 	ignorecase = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -29,8 +28,6 @@
 	commit = yellow bold
 	old = red bold
 	new = green bold
-[interactive]
-	diffFilter = diff-so-fancy --patch
 [color]
 	ui = true
 [color "diff-highlight"]
