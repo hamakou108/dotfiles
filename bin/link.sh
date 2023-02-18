@@ -30,8 +30,6 @@ make_link ${dotfiles_dir}/config/zsh/zshrc         ~/.zshrc
 make_link ${dotfiles_dir}/config/fish/config.fish  ~/.config/fish/config.fish
 make_link ${dotfiles_dir}/config/fish/fish_plugins ~/.config/fish/fish_plugins
 make_link ${dotfiles_dir}/config/tmux/tmux.conf    ~/.tmux.conf
-make_link ${dotfiles_dir}/config/oni/config.tsx    ~/.config/oni/config.tsx
-make_link ${dotfiles_dir}/config/hyper/hyper.js    ~/.hyper.js
 
 # update profiles
 touch ~/.bash_profile
