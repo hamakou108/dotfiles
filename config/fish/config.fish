@@ -31,9 +31,6 @@ end
 alias tmux='tmux -2'
 set -x TERM screen-256color
 
-# split window like ide
-alias ide='~/ide.sh'
-
 ################################################################################
 # SSH
 alias ssh='set -x TERM screen ssh'
