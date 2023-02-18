@@ -67,19 +67,6 @@ if test -d /usr/local/opt/coreutils/libexec/gnubin
 end
 
 ################################################################################
-# pipenv
-# if pipenv is installed and executable
-if type -q pipenv
-    # to avoid the bug on macOS
-    # cf. https://pipenv-ja.readthedocs.io/ja/translate-ja/diagnose.html#valueerror-unknown-locale-utf-8
-    if test (uname) = 'Darwin'
-        set -x LC_ALL en_US.UTF-8
-    end
-    # enable auto completion
-    pipenv --completion | source
-end
-
-################################################################################
 # asdf
 source /usr/local/opt/asdf/libexec/asdf.fish
 
