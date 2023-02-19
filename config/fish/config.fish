@@ -80,4 +80,8 @@ if command -q which brew
     ################################################################################
     # asdf
     source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
+
+    ################################################################################
+    # OpenSSL
+    fish_add_path $HOMEBREW_PREFIX/opt/openssl@3/bin
 end
