@@ -14,7 +14,7 @@
 
 " Colorscheme
 :set background=dark
-:colorscheme elly
+:colorscheme onedark
 :set termguicolors
 
 " Show whitespace characters like tabs
