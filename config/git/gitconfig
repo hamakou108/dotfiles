@@ -1,6 +1,6 @@
 [user]
-	name = Bob
-	email = bob@example.com
+	name = hamakou108
+	email = hamakou108@gmail.com
 [core]
   #whitespace = cr-at-eol
 	editor = nvim

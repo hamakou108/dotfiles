@@ -15,6 +15,15 @@ Run ``link.sh`` to create links to dotfiles.
 $ ./bin/link.sh
 ```
 
+Rename author name and email in `gitconfig`.
+
+```ini:config/git/gitconfig
+[user]
+	name = <your_name_here>
+	email = <your_email_here>
+```
+
+
 ## Requirements
 
 ## Acknowledgments
