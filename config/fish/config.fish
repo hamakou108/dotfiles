@@ -85,3 +85,7 @@ if command -q which brew
     # OpenSSL
     fish_add_path $HOMEBREW_PREFIX/opt/openssl@3/bin
 end
+
+################################################################################
+# Rust (rustup)
+fish_add_path $HOME/.cargo/bin
