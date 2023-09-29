@@ -63,7 +63,6 @@ cask "google-drive"
 cask "google-japanese-ime"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
-cask "kindle"
 cask "iterm2"
 cask "miro"
 cask "notion"
@@ -80,6 +79,7 @@ cask "visual-studio-code"
 cask "vivaldi"
 cask "zoom"
 mas "DaisyDisk", id: 411643860
+mas "Kindle", id: 302584613
 mas "Magnet", id: 441258766
 mas "Presentify", id: 1507246666
 mas "RunCat", id: 1429033973
