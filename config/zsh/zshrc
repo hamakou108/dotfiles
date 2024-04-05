@@ -141,3 +141,9 @@ path=($HOME/.cargo/bin ${path})
 ################################################################################
 # pipx
 path=($HOME/.local/bin ${path})
+
+################################################################################
+# SDKMAN!
+if [[ -d $HOME/.sdkman ]]; then
+    source $HOME/.sdkman/bin/sdkman-init.sh
+fi
