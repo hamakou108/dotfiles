@@ -2,18 +2,24 @@
 
 ## Installation
 
-Clone this repository.
+### Clone the repository
 
-```
-$ git clone git@github.com:hamakou108/dotfiles.git
-$ cd dotfiles
+```shell
+git clone --recursive git@github.com:hamakou108/dotfiles.git
+cd dotfiles
 ```
 
-Run ``link.sh`` to create links to dotfiles.
+This repository depends on [hamakou108/kickstart.nvim](https://github.com/hamakou108/kickstart.nvim) as a submodule. So, you need to use `--recursive` option to clone the repository.
 
+### Create links
+
+Then, Run ``link.sh`` to create links to dotfiles.
+
+```shell
+sh ./bin/link.sh
 ```
-$ ./bin/link.sh
-```
+
+### Set your profiles
 
 Rename author name and email in `gitconfig`.
 
@@ -23,11 +29,6 @@ Rename author name and email in `gitconfig`.
 	email = <your_email_here>
 ```
 
-
 ## Requirements
 
 ## Acknowledgments
-
-- [yymm/.dotfiles](https://github.com/yymm/.dotfiles/tree/master/config/nvim)
-- [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
-
