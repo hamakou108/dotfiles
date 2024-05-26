@@ -24,7 +24,6 @@ function make_link () {
 dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
 make_link ${dotfiles_dir}/config/git/gitconfig ~/.gitconfig
 make_link ${dotfiles_dir}/config/nvim ~/.config/nvim
-make_link ${dotfiles_dir}/config/tmux/tmux.conf ~/.tmux.conf
 make_link ${dotfiles_dir}/config/zellij ~/.config/zellij
 make_link ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
 
