@@ -93,6 +93,7 @@ if [[ -x /usr/local/bin/brew ]]; then
         alias vi=$(which nvim)
         alias vim=$(which nvim)
         alias editor=$(which nvim)
+        export EDITOR=$(which nvim)
     fi
 
     ################################################################################
@@ -188,7 +189,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
