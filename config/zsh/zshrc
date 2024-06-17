@@ -75,7 +75,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 ################################################################################
 # Homebrew
-if [[ -x /usr/local/bin/brew ]]; then
+if which brew &> /dev/null; then
     local homebrew_prefix=$(brew --prefix)
 
     ################################################################################
