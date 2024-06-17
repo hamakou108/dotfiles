@@ -89,7 +89,7 @@ if which brew &> /dev/null; then
 
     ################################################################################
     # NeoVim
-    if which nvim >/dev/null; then
+    if which nvim &> /dev/null; then
         alias vi=$(which nvim)
         alias vim=$(which nvim)
         alias editor=$(which nvim)
