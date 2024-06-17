@@ -79,11 +79,6 @@ if which brew &> /dev/null; then
     local homebrew_prefix=$(brew --prefix)
 
     ################################################################################
-    # Tmux
-    alias tmux='tmux -2'
-    export TERM=screen-256color
-
-    ################################################################################
     # SSH
     alias ssh='TERM=screen ssh'
 
@@ -125,10 +120,6 @@ if which brew &> /dev/null; then
         alias la='ls -aF --color=auto'
         alias ll='ls -lF --color=auto'
     fi
-
-    ################################################################################
-    # asdf
-    # TODO (add "asdf for oh-my-zsh" plugin)
 
     ################################################################################
     # OpenSSL
