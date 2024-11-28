@@ -97,7 +97,6 @@ if which brew &> /dev/null; then
     # which points to a directory (cf. zsh man page 14.8.7 Glob Qualifiers)
     path=(
         ${homebrew_prefix}/opt/coreutils/libexec/gnubin(N-/) # coreutils
-        ${homebrew_prefix}/opt/ed/libexec/gnubin(N-/)        # ed
         ${homebrew_prefix}/opt/findutils/libexec/gnubin(N-/) # findutils
         ${homebrew_prefix}/opt/gnu-sed/libexec/gnubin(N-/)   # sed
         ${homebrew_prefix}/opt/gnu-tar/libexec/gnubin(N-/)   # tar
@@ -106,7 +105,6 @@ if which brew &> /dev/null; then
     )
     manpath=(
         ${homebrew_prefix}/opt/coreutils/libexec/gnuman(N-/) # coreutils
-        ${homebrew_prefix}/opt/ed/libexec/gnuman(N-/)        # ed
         ${homebrew_prefix}/opt/findutils/libexec/gnuman(N-/) # findutils
         ${homebrew_prefix}/opt/gnu-sed/libexec/gnuman(N-/)   # sed
         ${homebrew_prefix}/opt/gnu-tar/libexec/gnuman(N-/)   # tar
