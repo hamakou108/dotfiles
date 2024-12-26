@@ -230,6 +230,39 @@ if which brew &> /dev/null; then
     # OpenSSL
     # ────────────────────────────────────────────────────────────────
     path=(${homebrew_prefix}/opt/openssl@3/bin ${path})
+
+    # ────────────────────────────────────────────────────────────────
+    # UNIX command alternative tools
+    # ────────────────────────────────────────────────────────────────
+    if which zoxide &> /dev/null; then
+        eval "$(zoxide init zsh)"
+    fi
+
+    # Function to dynamically create a shell function that wraps an existing command.
+    # The wrapper adds a message suggesting an alternative tool after executing the original command.
+    suggest_alternative_command() {
+        local original=$1
+        local alternative=$2
+
+        if alias $original &>/dev/null; then
+            unalias $original
+        fi
+
+        if ! which $alternative &> /dev/null; then
+            return
+        fi
+
+        local cmd="command $original \"\$@\"; echo \"\nℹ️  Next time, consider using '$alternative' instead!\""
+        eval "$original() { $cmd; }"
+    }
+
+    suggest_alternative_command ls eza
+    suggest_alternative_command cd z
+    suggest_alternative_command cat bat
+    suggest_alternative_command find fd
+    suggest_alternative_command grep rg
+    suggest_alternative_command du dust
+    suggest_alternative_command ps procs
 fi
 
 # ────────────────────────────────────────────────────────────────
