@@ -257,7 +257,6 @@ if which brew &> /dev/null; then
     }
 
     suggest_alternative_command ls eza
-    suggest_alternative_command cd z
     suggest_alternative_command cat bat
     suggest_alternative_command find fd
     suggest_alternative_command grep rg
