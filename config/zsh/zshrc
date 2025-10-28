@@ -234,26 +234,22 @@ if which brew &> /dev/null; then
     # ────────────────────────────────────────────────────────────────
     # UNIX command alternative tools
     # ────────────────────────────────────────────────────────────────
-    if which zoxide &> /dev/null; then
-        eval "$(zoxide init zsh)"
-    fi
+    # Setup zoxide
+    command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
     # Function to dynamically create a shell function that wraps an existing command.
     # The wrapper adds a message suggesting an alternative tool after executing the original command.
     suggest_alternative_command() {
-        local original=$1
-        local alternative=$2
-
-        if alias $original &>/dev/null; then
-            unalias $original
-        fi
-
-        if ! which $alternative &> /dev/null; then
-            return
-        fi
-
-        local cmd="command $original \"\$@\"; echo \"\nℹ️  Next time, consider using '$alternative' instead!\""
-        eval "$original() { $cmd; }"
+        local original="$1" alternative="$2"
+        command -v "$original" >/dev/null 2>&1 || return
+        command -v "$alternative" >/dev/null 2>&1 || return
+        alias "$original" &>/dev/null && unalias "$original"
+        eval "$original() {
+            command $original \"\$@\"
+            local s=\$?
+            [ -t 1 ] && >&2 echo \"\nℹ️  Next time, consider using '$alternative' instead!\"
+            return \$s
+        }"
     }
 
     suggest_alternative_command ls eza
