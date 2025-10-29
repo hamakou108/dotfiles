@@ -237,6 +237,10 @@ if which brew &> /dev/null; then
     # Setup zoxide
     command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
+    # Use modern replacements if available
+    command -v eza >/dev/null 2>&1 && alias ls='eza'
+    command -v bat >/dev/null 2>&1 && alias cat='bat --paging=never --style=plain'
+
     # Function to dynamically create a shell function that wraps an existing command.
     # The wrapper adds a message suggesting an alternative tool after executing the original command.
     suggest_alternative_command() {
@@ -252,8 +256,6 @@ if which brew &> /dev/null; then
         }"
     }
 
-    suggest_alternative_command ls eza
-    suggest_alternative_command cat bat
     suggest_alternative_command find fd
     suggest_alternative_command grep rg
     suggest_alternative_command du dust
