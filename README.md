@@ -19,14 +19,15 @@ Then, Run ``link.sh`` to create links to dotfiles.
 sh ./bin/link.sh
 ```
 
-### Set your profiles
+### Create Git local config
 
-Rename author name and email in `gitconfig`.
+Create `~/.gitconfig.local` to store user-specific Git settings that should not be committed to this repository.
 
-```ini:config/git/gitconfig
+```shell:~/.gitconfig.local
 [user]
-	name = <your_name_here>
-	email = <your_email_here>
+	name = Your Name
+	email = your.email@example.com
+	signingkey = ssh-ed25519 AAAA...
 ```
 
 ## Requirements

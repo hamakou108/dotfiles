@@ -1,8 +1,4 @@
-[user]
-	name = hamakou108
-	email = hamakou108@gmail.com
 [core]
-  #whitespace = cr-at-eol
 	editor = nvim
 	quotepath = false
 	autocrlf = false
@@ -34,3 +30,12 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+
+[include]
+	path = .gitconfig.local
