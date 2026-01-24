@@ -1,0 +1,16 @@
+# ~/.gitconfig.local example
+#
+# This file is included from `~/.gitconfig`.
+# Copy this file to `~/.gitconfig.local` and configure your local settings.
+
+[user]
+	name = Your Name
+	email = your.email@example.com
+	signingkey = ssh-ed25519 AAAA...  # or your public key path
+
+# SSH signing configuration (optional)
+# Required only for certain setups (e.g., 1Password).
+# If your SSH key is managed by ssh-agent, you may omit this.
+#
+# [gpg "ssh"]
+# 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

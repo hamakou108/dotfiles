@@ -1,3 +1,5 @@
+[user]
+	useConfigOnly = true
 [core]
 	editor = nvim
 	quotepath = false
@@ -32,8 +34,6 @@
 	newHighlight = green bold 22
 [gpg]
 	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
 
