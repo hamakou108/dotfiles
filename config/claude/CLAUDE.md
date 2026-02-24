@@ -21,6 +21,11 @@ Follow the project's conventions first, while keeping these principles in mind:
 - **SRP (Single Responsibility Principle)**: Each module, class, or function should have one reason to change. If you need "and" to describe what it does, consider splitting it.
 - **Don't Mix Simple and Easy**: Keep simplicity (fewer concepts) and easiness (fewer steps) separate. Mixing them in the same place obscures intent and makes code harder to reason about.
 
+## Tool Preferences
+
+- **File search**: Prefer the Glob tool over `fd` over `find`.
+- **Content search**: Prefer the Grep tool over `rg` over `grep`.
+
 ## Troubleshooting
 
 - **Command execution failures**: If a command fails, check whether the failure is caused by sandbox restrictions (e.g., "Operation not permitted" errors, access denied to paths outside allowed directories). If so, retry the command with sandbox disabled.
