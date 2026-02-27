@@ -28,4 +28,4 @@ Follow the project's conventions first, while keeping these principles in mind:
 
 ## Troubleshooting
 
-- **Command execution failures**: If a command fails, check whether the failure is caused by sandbox restrictions (e.g., "Operation not permitted" errors, access denied to paths outside allowed directories). If so, retry the command with sandbox disabled.
+- **Sandbox restrictions**: When a command fails, first suspect sandbox restrictions as the cause—not just for obvious "Operation not permitted" errors, but also for indirect failures like GPG/SSH signing errors or socket access issues. Always retry with sandbox disabled before attempting any other workaround. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
