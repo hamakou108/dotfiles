@@ -29,3 +29,4 @@ Follow the project's conventions first, while keeping these principles in mind:
 ## Troubleshooting
 
 - **Sandbox restrictions**: When a command fails, first suspect sandbox restrictions as the cause—not just for obvious "Operation not permitted" errors, but also for indirect failures like GPG/SSH signing errors or socket access issues. Always retry with sandbox disabled before attempting any other workaround. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
+- **Interactive aliases**: `mv`, `cp`, and `rm` are aliased to their `-i` (interactive) variants in zsh, which prompt for confirmation and block non-interactive execution. When running these commands, always use the `-f` flag to bypass the interactive prompt (e.g., `mv -f`, `cp -f`, `rm -f`).
