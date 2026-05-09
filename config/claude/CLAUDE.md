@@ -12,6 +12,7 @@ When writing in Japanese, add spaces around English words and parentheses, just 
 - Follow [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages, using the language that matches the project's convention.
 - When making changes that affect documented behavior, update the relevant documentation (e.g., CLAUDE.md, README) in the same commit.
 - When working with technical specifications, languages, frameworks, or libraries, always verify the latest information for the version in use before proceeding, as specifications may have changed over time.
+- Before implementing with unfamiliar or potentially outdated technologies, invoke the `best-practices-researcher` agent to research current best practices.
 
 ## Coding Principles
 
