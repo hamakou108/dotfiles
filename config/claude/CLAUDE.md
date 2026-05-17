@@ -36,4 +36,4 @@ Follow the project's conventions first, while keeping these principles in mind:
 
 ### AI-DLC
 
-- When recording user input in audit.md, always translate it into English. The audit log must be written entirely in English to maintain consistency across the project.
+- When recording user input in any file (audit.md, plan, etc.), always translate it into the language used by the project. All content must be written in the project's language to maintain consistency.
