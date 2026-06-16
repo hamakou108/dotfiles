@@ -1,75 +1,146 @@
 tap "homebrew/bundle"
-brew "apify-cli"
-brew "bandwhich"
-brew "bat"
-brew "bottom"
-brew "coreutils"
-brew "diffutils"
-brew "dust"
-brew "exiftool"
-brew "eza"
-brew "fd"
-brew "ffmpeg"
-brew "findutils"
-brew "fzf"
-brew "gh"
-brew "gnu-sed"
-brew "gnu-tar"
-brew "grep"
-brew "grex"
-brew "httpie"
-brew "hyperfine"
-brew "jq"
-brew "just"
-brew "marp-cli"
-brew "mas"
-brew "minikube"
-brew "mise"
-brew "neovim"
-brew "nkf"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Apify command-line interface
+brew "apify-cli"
+# Terminal bandwidth utilization tool
+brew "bandwhich"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# File comparison utilities
+brew "diffutils"
+# More intuitive version of du in rust
+brew "dust"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Command-line tool for generating regular expressions
+brew "grex"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Command-line benchmarking tool
+brew "hyperfine"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
+# Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
+brew "marp-cli"
+# Mac App Store command-line interface
+brew "mas"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Network Kanji code conversion Filter (NKF)
+brew "nkf"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Modern Python package and dependency manager supporting the latest PEP standards
 brew "pdm"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Modern replacement for ps written in Rust
 brew "procs"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# User interface to the TELNET protocol
 brew "telnet"
+# Program that allows you to count code, quickly
 brew "tokei"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
 brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Execute commands when watched files change
 brew "watchexec"
+# Image format providing lossless and lossy compression for web images
 brew "webp"
+# Internet file retriever
 brew "wget"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# View, print, and comment on PDF documents
 cask "adobe-acrobat-reader"
+# Image editing and design software
 cask "affinity"
+# Enable Windows-like alt-tab
 cask "alt-tab"
+# Menu bar icon organiser
 cask "bartender"
+# 3D creation suite
 cask "blender"
+# OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
 cask "claude-code"
+# Voice and text chat software
 cask "discord"
+# Collaborative team software
 cask "figma"
+# Web browser
 cask "firefox"
 cask "font-hack-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
+# Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
 cask "google-drive"
+# Japanese input software
 cask "google-japanese-ime"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Keyboard customiser
 cask "karabiner-elements"
+# Online collaborative whiteboard platform
 cask "miro"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Collaboration platform for API development
 cask "postman"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Team communication and collaboration software
 cask "slack"
+# Open-source code editor
 cask "visual-studio-code"
+# Video communication and virtual meeting platform
 cask "zoom"
 mas "DaisyDisk", id: 411643860
 mas "Kindle", id: 302584613
