@@ -128,6 +128,8 @@ cask "iterm2"
 cask "karabiner-elements"
 # Online collaborative whiteboard platform
 cask "miro"
+# AI-powered translator
+cask "nani"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Replacement for Docker Desktop
@@ -143,8 +145,10 @@ cask "visual-studio-code"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "DaisyDisk", id: 411643860
+mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
-mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Presentify", id: 1507246666
 mas "RunCat", id: 1429033973
 mas "Xcode", id: 497799835
