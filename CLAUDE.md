@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Use English for all Git commit messages and documentation.
 
+## Git Workflow
+
+Commit and push changes directly to `main`. This is a personal dotfiles repository with no review workflow, so there is no need to create feature branches.
+
 ## Repository Overview
 
 This is a macOS dotfiles repository that manages configuration files for various development tools. It uses symbolic links to connect config files from this repo to their expected locations.
