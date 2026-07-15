@@ -1,0 +1,7 @@
+{
+  // cmux reads its config from a `.json` file but supports JSON with comments (JSONC).
+  // Treat it as JSONC so VS Code stops flagging "Comments are not permitted in JSON".
+  "files.associations": {
+    "cmux.json": "jsonc"
+  }
+}
