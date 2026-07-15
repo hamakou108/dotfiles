@@ -19,6 +19,7 @@ Follow the project's conventions first, while keeping these principles in mind:
 - **SRP (Single Responsibility Principle)**: Each module, class, or function should have one reason to change. If you need "and" to describe what it does, consider splitting it.
 - **Don't Mix Simple and Easy**: Keep simplicity (fewer concepts) and easiness (fewer steps) separate. Mixing them in the same place obscures intent and makes code harder to reason about.
 - **Match each artifact to its intent ([HWWWn](https://scrapbox.io/tanaken0515/HWWWn_%EF%BC%88%E3%81%AF%E3%82%8F%E3%82%8F%E3%82%8F%E3%82%93%EF%BC%89%E3%81%AE%E5%8E%9F%E5%89%87))**: Express the right kind of intent in the right place—**code** expresses _How_ (what it does), **test code** expresses _What_ (the behavior guaranteed), **commit logs** express _Why_ (the reason for the change), and **code comments** express _Why not_ (why alternatives were rejected, and the constraints behind the choice).
+- **Judge designs against a single dominant axis (Decision Quality)**: For any non-trivial design or architecture decision, name the one evaluation axis that matters most now, keep the rest as minimum-level secondary conditions, and check whether the current choice is falling into a known design-judgment failure pattern. The `design-judgment` skill holds the eight axes and the failure-pattern catalog—invoke it when the situation calls for one.
 
 ## Development Practices
 
