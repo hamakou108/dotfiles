@@ -1,0 +1,21 @@
+# --- Theme / Font ----------------------------------------------
+theme = Catppuccin Mocha
+font-family = "JetBrains Mono"
+font-size = 12
+
+# --- Transparency / Blur --------------------------------------
+# Let the desktop show through slightly behind the cmux sidebar
+background-opacity = 0.85
+background-blur = true
+
+# --- Window / Padding -------------------------------------------
+# Keep some margin so text does not sit too close to the left vertical tab sidebar
+window-padding-x = 8
+window-padding-y = 8
+
+# Restore window state on restart
+window-save-state = always
+
+# --- Security ---------------------------------------------------
+# Automatically enable Secure Keyboard Entry when entering a password
+macos-auto-secure-input = true

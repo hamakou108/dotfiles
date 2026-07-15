@@ -26,6 +26,7 @@ brew bundle --file=config/homebrew/Brewfile
 ## Structure
 
 - `bin/link.sh` - Creates symlinks from this repo to home directory locations
+- `config/ghostty/config.ghostty` - Ghostty terminal emulator config (links to `~/.config/ghostty/config.ghostty`)
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)
 - `config/homebrew/Brewfile` - Homebrew package manifest
 - `config/nvim/` - LazyVim configuration (submodule pointing to hamakou108/lazyvim-starter, links to `~/.config/nvim`)

@@ -22,6 +22,7 @@ function make_link () {
 
 # create links to configuration files
 dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
+make_link ${dotfiles_dir}/config/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
 make_link ${dotfiles_dir}/config/git/gitconfig ~/.gitconfig
 make_link ${dotfiles_dir}/config/nvim ~/.config/nvim
 make_link ${dotfiles_dir}/config/zellij ~/.config/zellij
