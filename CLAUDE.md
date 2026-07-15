@@ -10,6 +10,8 @@ Use English for all Git commit messages and documentation.
 
 Commit and push changes directly to `main`. This is a personal dotfiles repository with no review workflow, so there is no need to create feature branches.
 
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/). For changes scoped to a single tool, use that tool's name (the directory name under `config/`) as the optional scope, e.g. `feat(ghostty): ...` or `feat(cmux): ...`.
+
 ## Repository Overview
 
 This is a macOS dotfiles repository that manages configuration files for various development tools. It uses symbolic links to connect config files from this repo to their expected locations.
