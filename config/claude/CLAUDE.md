@@ -1,5 +1,9 @@
 # Global Instructions
 
+## Collaboration
+
+- **Communicate more when context is thin**: Early in a session, before enough context has been gathered, check in with the user more often—ask clarifying questions and confirm direction instead of assuming. Decisions made at this stage carry the highest risk of rework.
+
 ## Writing
 
 These conventions apply across code, tests, and documentation.
@@ -27,7 +31,13 @@ Follow the project's conventions first, while keeping these principles in mind:
 - When making changes that affect documented behavior, update the relevant documentation (e.g., CLAUDE.md, README) in the same commit.
 - When working with technical specifications, languages, frameworks, or libraries, always verify the latest information for the version in use before proceeding, as specifications may have changed over time.
 - Before implementing with unfamiliar or potentially outdated technologies, invoke the `best-practices-researcher` agent to research current best practices.
-- When commenting on external applications (e.g., GitHub, Slack) under the operator's account, include information that identifies the content as AI-generated.
+
+## Working with External Systems
+
+These apply to any system outside the local working copy—hosted services (e.g., GitHub, Slack), APIs, databases, and deployed environments.
+
+- Before updating data on an external system, always read the current state first. Even if the same data was updated earlier in the session, someone else may have changed it since then, and writing without checking risks overwriting their work.
+- When posting content (e.g., comments, messages) under the operator's account, include information that identifies the content as AI-generated.
 
 ## Tool Preferences
 
