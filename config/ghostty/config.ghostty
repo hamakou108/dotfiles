@@ -1,11 +1,11 @@
 # --- Theme / Font ----------------------------------------------
 theme = Catppuccin Mocha
-font-family = "JetBrains Mono"
+font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-size = 12
 
 # --- Transparency / Blur --------------------------------------
 # Let the desktop show through slightly behind the cmux sidebar
-background-opacity = 0.85
+background-opacity = 0.95
 background-blur = true
 
 # --- Window / Padding -------------------------------------------
