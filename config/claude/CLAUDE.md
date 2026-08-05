@@ -48,7 +48,6 @@ These apply to any system outside the local working copy—hosted services (e.g.
 
 - **File search**: Prefer a dedicated file-search tool when the session offers one; otherwise use `fd`.
 - **Content search**: Prefer a dedicated content-search tool when the session offers one; otherwise use `rg`.
-- `find` and `grep` are denied by permission settings. Treat a denial as a signal to switch to `fd`/`rg` or to read the file directly—never as something to work around.
 
 ## Troubleshooting
 
