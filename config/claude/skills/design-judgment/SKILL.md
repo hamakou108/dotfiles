@@ -21,7 +21,7 @@ sound decision can still turn out badly, and vice versa. This skill turns the DQ
 lens into a concrete self-check for design work.
 
 Most recurring design-judgment failures come from mishandling two DQ elements:
-**Frame** and **Values**. Model Values as eight **evaluation axes**, and model a
+**Frame** and **Values**. Model Values as the **evaluation axes** below, and model a
 Frame error as a **dominant-axis mismatch** (`intended dominant axis ≠ adopted
 dominant axis`). The other four DQ elements show up as secondary symptoms.
 
