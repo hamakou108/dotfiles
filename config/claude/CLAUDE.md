@@ -30,10 +30,12 @@ Follow the project's conventions first, while keeping these principles in mind:
 
 ## Development Practices
 
-- Follow [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages, using the language that matches the project's convention.
-- When making changes that affect documented behavior, update the relevant documentation (e.g., CLAUDE.md, README) in the same commit.
-- Verify the current specification for the version in use before relying on it—specifications change. Trigger on observable signals: the version postdates your knowledge cutoff, the repository pins a version you have not confirmed, or a call fails in a way the documented behavior does not explain.
-- Invoke the `best-practices-researcher` agent before implementing against a technology whose current practices you have not confirmed. Treat it as unconfirmed unless this session has established how the version in use is meant to be used.
+These apply at the boundaries of a change—what to confirm before starting, and what to include when committing.
+
+- **Verify the specification in use**: Check the current specification for the version in use before relying on it—specifications change. Trigger on observable signals: the version postdates your knowledge cutoff, the repository pins a version you have not confirmed, or a call fails in a way the documented behavior does not explain.
+- **Research unconfirmed technologies**: Invoke the `best-practices-researcher` agent before implementing against a technology whose current practices you have not confirmed. Treat it as unconfirmed unless this session has established how the version in use is meant to be used.
+- **Commit with Conventional Commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages, using the language that matches the project's convention.
+- **Update affected documentation**: When making changes that affect documented behavior, update the relevant documentation (e.g., CLAUDE.md, README) in the same commit.
 
 ## Working with External Systems
 
