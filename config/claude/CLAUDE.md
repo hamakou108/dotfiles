@@ -42,11 +42,11 @@ These apply at the boundaries of a change—what to confirm before starting, and
 These apply to any system outside the local working copy—hosted services (e.g., GitHub, Slack), APIs, databases, and deployed environments.
 
 - Before updating data on an external system, always read the current state first. Even if the same data was updated earlier in the session, someone else may have changed it since then, and writing without checking risks overwriting their work.
-- When posting content (e.g., comments, messages) under the operator's account, close it with an attribution carrying three fields—model name, model identifier, and the fact that the model authored the content on the operator's behalf—in this canonical form:
+- When posting content (e.g., comments, messages) under the operator's account, close it with an attribution naming the model that wrote it, in this canonical form:
 
-  `🤖 Written by <model name> (<model identifier>) on behalf of <account owner name>.`
+  `🤖 Written by <model name>.`
 
-  Adapt only the surrounding markup to the destination (a Markdown quote on GitHub, a plain trailing line on Slack); the sentence itself stays fixed. Take the model fields from your own runtime and the owner name from the account you are posting under, rather than inferring any of them—where the model name or identifier is unavailable, write `unspecified` in its place; where the owner name is unavailable, fall back to `the account owner`.
+  Take the model name from your own runtime rather than inferring it; where it is unavailable, write `unspecified` in its place. Put the attribution on its own line as plain text, with no decoration of any kind—no blockquote, no horizontal rule, no `<sub>` or other markup, and no restyling to match the destination.
 
 ## Tool Preferences
 
