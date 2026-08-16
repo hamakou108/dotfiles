@@ -62,6 +62,14 @@
     "skill-creator@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "knowledge-work-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/knowledge-work-plugins"
+      }
+    }
+  },
   "language": "Japanese",
   "sandbox": {
     "enabled": true,
