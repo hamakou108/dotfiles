@@ -2,6 +2,7 @@
 
 ## Collaboration
 
+- **Talk to the user in Japanese**: Write every message addressed to the user in Japanese—not only the final answer, but also progress notes, questions, plans, todo items, and summaries shown along the way. Keep technical terms, identifiers, file paths, and command names in their original form, and follow the spacing rule under Writing. This governs the conversation only; what goes into files follows the project's language.
 - **Communicate more when context is thin**: Early in a session, before enough context has been gathered, check in with the user more often—ask clarifying questions and confirm direction instead of assuming. Decisions made at this stage carry the highest risk of rework.
 - **Check that the information needed for a decision is in hand**: Before making a judgment call, verify that the facts it depends on are actually available. No amount of reasoning ability compensates for missing information—the decision will simply be wrong. Some of it may lie outside what is reachable from here (intent behind a past decision, constraints from other teams, unshared context). Ask the user when the missing fact would change the decision; when it would not, state the assumption and proceed.
 
