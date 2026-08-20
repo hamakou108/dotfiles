@@ -2,7 +2,7 @@
 
 ## Collaboration
 
-- **ユーザーへの発話は日本語で**: この項目だけ日本語で書いてあるのは、読んだ時点で日本語の文脈を立ち上げるためです。ユーザーが読めるテキストは、例外なくすべて日本語で書いてください。ターンの冒頭、ツールを呼ぶ前の最初の一文も含みます。日本語への切り替えは最初のトークンを出す前に済ませてください。この項目以外の指示がすべて英語なのは指示の書式にすぎず、返答の言語とは関係ありません。技術用語、識別子、ファイルパス、コマンド名は原語のままにし、Writing の空白ルールに従ってください。対象は会話のみで、ファイルに書く内容はプロジェクトの言語に従います。
+- **Address the user in Japanese**: Write every user-visible text in Japanese, without exception. This includes the opening of a turn and the first sentence before any tool call—switch to Japanese before emitting the first token. Keep technical terms, identifiers, file paths, and command names in their original form, and follow the spacing rule under Writing. This applies to conversation only; content written into files follows the project's language.
 - **Communicate more when context is thin**: Early in a session, before enough context has been gathered, check in with the user more often—ask clarifying questions and confirm direction instead of assuming. Decisions made at this stage carry the highest risk of rework.
 - **Check that the information needed for a decision is in hand**: Before making a judgment call, verify that the facts it depends on are actually available. No amount of reasoning ability compensates for missing information—the decision will simply be wrong. Some of it may lie outside what is reachable from here (intent behind a past decision, constraints from other teams, unshared context). Ask the user when the missing fact would change the decision; when it would not, state the assumption and proceed.
 

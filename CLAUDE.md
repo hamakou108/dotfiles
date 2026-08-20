@@ -32,6 +32,7 @@ brew bundle --file=config/homebrew/Brewfile
 ## Structure
 
 - `bin/link.sh` - Creates symlinks from this repo to home directory locations
+- `config/claude/hooks/` - Claude Code hook scripts (links to `~/.claude/hooks`)
 - `config/claude/settings.json` - Claude Code settings (links to `~/.claude/settings.json`)
 - `config/cmux/cmux.json` - cmux terminal multiplexer config (links to `~/.config/cmux/cmux.json`)
 - `config/ghostty/config.ghostty` - Ghostty terminal emulator config (links to `~/.config/ghostty/config.ghostty`)

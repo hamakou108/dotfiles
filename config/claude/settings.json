@@ -56,6 +56,20 @@
       "Edit(build.rs)"
     ]
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact|resume|clear|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/reload-global-instructions.sh",
+            "statusMessage": "Reloading global instructions..."
+          }
+        ]
+      }
+    ]
+  },
   "model": "opus[1m]",
   "enabledPlugins": {
     "pr-review-toolkit@claude-plugins-official": true,
