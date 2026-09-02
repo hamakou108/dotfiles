@@ -56,6 +56,11 @@
       "Edit(build.rs)"
     ]
   },
+  "model": "opus[1m]",
+  "outputStyle": "Concise",
+  "attribution": {
+    "sessionUrl": false
+  },
   "hooks": {
     "SessionStart": [
       {
@@ -80,7 +85,6 @@
       }
     ]
   },
-  "model": "opus[1m]",
   "enabledPlugins": {
     "pr-review-toolkit@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
