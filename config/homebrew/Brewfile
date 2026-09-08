@@ -118,7 +118,7 @@ cask "figma"
 # Web browser
 cask "firefox"
 cask "font-hack-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
+cask "font-plemol-jp-nf"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
