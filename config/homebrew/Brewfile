@@ -129,8 +129,6 @@ cask "google-chrome"
 cask "google-drive"
 # Japanese input software
 cask "google-japanese-ime"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
 # Online collaborative whiteboard platform
