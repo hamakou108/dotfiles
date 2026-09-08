@@ -37,6 +37,7 @@ brew bundle --file=config/homebrew/Brewfile
 - `config/cmux/cmux.json` - cmux terminal multiplexer config (links to `~/.config/cmux/cmux.json`)
 - `config/ghostty/config.ghostty` - Ghostty terminal emulator config (links to `~/.config/ghostty/config.ghostty`)
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)
+- `config/herdr/config.toml` - herdr agent multiplexer config (links to `~/.config/herdr/config.toml`)
 - `config/homebrew/Brewfile` - Homebrew package manifest
 - `config/nvim/` - LazyVim configuration (submodule pointing to hamakou108/lazyvim-starter, links to `~/.config/nvim`)
 - `config/zsh/zshrc` - Zsh configuration with oh-my-zsh (links to `~/.zshrc`)

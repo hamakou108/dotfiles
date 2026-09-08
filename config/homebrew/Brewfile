@@ -37,6 +37,8 @@ brew "gnu-tar"
 brew "grep"
 # Command-line tool for generating regular expressions
 brew "grex"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Command-line benchmarking tool

@@ -1,1 +1,4 @@
 Session.vim
+
+# Installed and overwritten by the herdr integration
+config/claude/hooks/herdr-agent-state.sh

@@ -25,6 +25,7 @@ dotfiles_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); cd ../; pwd)
 make_link ${dotfiles_dir}/config/cmux/cmux.json ~/.config/cmux/cmux.json
 make_link ${dotfiles_dir}/config/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
 make_link ${dotfiles_dir}/config/git/gitconfig ~/.gitconfig
+make_link ${dotfiles_dir}/config/herdr/config.toml ~/.config/herdr/config.toml
 make_link ${dotfiles_dir}/config/nvim ~/.config/nvim
 make_link ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
 make_link ${dotfiles_dir}/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
