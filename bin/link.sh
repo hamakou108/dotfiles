@@ -26,7 +26,6 @@ make_link ${dotfiles_dir}/config/cmux/cmux.json ~/.config/cmux/cmux.json
 make_link ${dotfiles_dir}/config/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
 make_link ${dotfiles_dir}/config/git/gitconfig ~/.gitconfig
 make_link ${dotfiles_dir}/config/nvim ~/.config/nvim
-make_link ${dotfiles_dir}/config/zellij ~/.config/zellij
 make_link ${dotfiles_dir}/config/zsh/zshrc ~/.zshrc
 make_link ${dotfiles_dir}/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
 make_link ${dotfiles_dir}/config/claude/agents ~/.claude/agents

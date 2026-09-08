@@ -39,7 +39,6 @@ brew bundle --file=config/homebrew/Brewfile
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)
 - `config/homebrew/Brewfile` - Homebrew package manifest
 - `config/nvim/` - LazyVim configuration (submodule pointing to hamakou108/lazyvim-starter, links to `~/.config/nvim`)
-- `config/zellij/` - Zellij terminal multiplexer config (links to `~/.config/zellij`)
 - `config/zsh/zshrc` - Zsh configuration with oh-my-zsh (links to `~/.zshrc`)
 
 ## Key Dependencies
