@@ -36,6 +36,8 @@
       "Bash(wget *)"
     ],
     "ask": [
+      "Bash(aws *)",
+      "Bash(gh api *)",
       "Bash(gh issue close *)",
       "Bash(gh issue comment *)",
       "Bash(gh issue create *)",
