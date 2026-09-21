@@ -101,11 +101,48 @@
   "language": "Japanese",
   "sandbox": {
     "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
     "excludedCommands": [
       "git *",
       "gh *",
       "docker *"
-    ]
+    ],
+    "filesystem": {
+      "denyRead": [
+        "~/.aws",
+        "~/.config",
+        "~/.docker",
+        "~/.gnupg",
+        "~/.kube",
+        "~/.netrc",
+        "~/.npmrc",
+        "~/.pypirc",
+        "~/.ssh",
+        "~/Library/Keychains",
+        "~/**/.env"
+      ],
+      "allowRead": [
+        "~/.config/cmux",
+        "~/.config/ghostty",
+        "~/.config/nvim",
+        "~/.config/zsh"
+      ]
+    },
+    "network": {
+      "allowedDomains": [
+        "crates.io",
+        "files.pythonhosted.org",
+        "formulae.brew.sh",
+        "ghcr.io",
+        "github.com",
+        "objects.githubusercontent.com",
+        "pypi.org",
+        "raw.githubusercontent.com",
+        "registry.npmjs.org",
+        "static.crates.io"
+      ]
+    }
   },
   "alwaysThinkingEnabled": false,
   "tui": "fullscreen"
