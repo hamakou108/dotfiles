@@ -3,6 +3,9 @@ onboarding = false
 [terminal]
 new_cwd = "follow"
 
+[keys]
+prefix = "ctrl+s"
+
 [theme]
 name = "tokyo-night"
 auto_switch = true
