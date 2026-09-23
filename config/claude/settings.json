@@ -28,11 +28,9 @@
       "Bash(gh workflow view *)"
     ],
     "deny": [
+      "Bash(curl *)",
       "Bash(rm *)",
       "Bash(rmdir *)",
-      "Bash(find *)",
-      "Bash(grep *)",
-      "Bash(curl *)",
       "Bash(wget *)"
     ],
     "ask": [

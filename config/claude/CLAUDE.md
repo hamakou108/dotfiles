@@ -49,11 +49,6 @@ These apply to any system outside the local working copy—hosted services (e.g.
 
   Take the model name from your own runtime rather than inferring it; where it is unavailable, write `unspecified` in its place. Put the attribution on its own line as plain text, with no decoration of any kind—no blockquote, no horizontal rule, no `<sub>` or other markup, and no restyling to match the destination.
 
-## Tool Preferences
-
-- **File search**: Prefer a dedicated file-search tool when the session offers one; otherwise use `fd`.
-- **Content search**: Prefer a dedicated content-search tool when the session offers one; otherwise use `rg`.
-
 ## Troubleshooting
 
 - **Sandbox restrictions**: A command may fail with a sandbox signature—"Operation not permitted", or indirect failures like GPG/SSH signing errors or socket access issues. The escape hatch that retries outside the sandbox is disabled, so report the blocked path or domain and let the user widen `sandbox.filesystem` or `sandbox.network` in settings.json. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
