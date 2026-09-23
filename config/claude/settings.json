@@ -127,6 +127,8 @@
       "allowRead": [
         "~/.config/cmux",
         "~/.config/ghostty",
+        "~/.config/git/attributes",
+        "~/.config/git/ignore",
         "~/.config/nvim",
         "~/.config/zsh"
       ]
