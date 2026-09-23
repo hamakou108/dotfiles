@@ -2,3 +2,7 @@ onboarding = false
 
 [terminal]
 new_cwd = "follow"
+
+[theme]
+name = "tokyo-night"
+auto_switch = true
