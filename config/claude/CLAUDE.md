@@ -56,6 +56,6 @@ These apply to any system outside the local working copy—hosted services (e.g.
 
 ## Troubleshooting
 
-- **Sandbox restrictions**: When a command fails with a sandbox signature—"Operation not permitted", or indirect failures like GPG/SSH signing errors or socket access issues—retry with the sandbox disabled before attempting any other workaround. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
+- **Sandbox restrictions**: A command may fail with a sandbox signature—"Operation not permitted", or indirect failures like GPG/SSH signing errors or socket access issues. The escape hatch that retries outside the sandbox is disabled, so report the blocked path or domain and let the user widen `sandbox.filesystem` or `sandbox.network` in settings.json. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
 - **Permission denials are not sandbox restrictions**: "Permission to use X has been denied" means a permission rule or the user rejected the call. Disabling the sandbox will not help and must not be attempted. Switch to an allowed tool or ask, and do not retry the same call.
 - **Interactive aliases**: Destructive file commands (`mv`, `cp`, `rm`) may be aliased to their `-i` (interactive) variants in zsh, which prompt for confirmation and block non-interactive execution. Pass `-f` when running them (e.g., `mv -f`, `cp -f`, `rm -f`).
