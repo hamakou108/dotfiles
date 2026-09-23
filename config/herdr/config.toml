@@ -8,4 +8,4 @@ prefix = "ctrl+s"
 
 [theme]
 name = "tokyo-night"
-auto_switch = true
+auto_switch = false
