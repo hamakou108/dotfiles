@@ -8,7 +8,7 @@ Use English for all Git commit messages and documentation.
 
 ## Git Workflow
 
-Commit and push changes directly to `main`. This is a personal dotfiles repository with no review workflow, so there is no need to create feature branches.
+Never commit or push directly to `main`; it is protected and accepts changes only through pull requests. Create a feature branch for each change, push it, and open a pull request against `main`.
 
 Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/). For changes scoped to a single tool, use that tool's name (the directory name under `config/`) as the optional scope, e.g. `feat(ghostty): ...` or `feat(cmux): ...`.
 
@@ -19,8 +19,8 @@ This is a macOS dotfiles repository that manages configuration files for various
 ## Setup Commands
 
 ```shell
-# Clone with submodules (required - nvim config is a submodule)
-git clone --recursive git@github.com:hamakou108/dotfiles.git
+# Clone the repository
+git clone git@github.com:hamakou108/dotfiles.git
 
 # Create symbolic links to all config files
 sh ./bin/link.sh
@@ -39,7 +39,7 @@ brew bundle --file=config/homebrew/Brewfile
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)
 - `config/herdr/config.toml` - herdr agent multiplexer config (links to `~/.config/herdr/config.toml`)
 - `config/homebrew/Brewfile` - Homebrew package manifest
-- `config/nvim/` - LazyVim configuration (submodule pointing to hamakou108/lazyvim-starter, links to `~/.config/nvim`)
+- `config/nvim/` - LazyVim configuration (links to `~/.config/nvim`)
 - `config/zsh/zshrc` - Zsh configuration with oh-my-zsh (links to `~/.zshrc`)
 
 ## Key Dependencies

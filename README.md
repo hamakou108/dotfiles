@@ -5,11 +5,9 @@
 ### Clone the repository
 
 ```shell
-git clone --recursive git@github.com:hamakou108/dotfiles.git
+git clone git@github.com:hamakou108/dotfiles.git
 cd dotfiles
 ```
-
-This repository depends on [hamakou108/lazyvim-starter](https://github.com/hamakou108/lazyvim-starter) as a submodule. So, you need to use `--recursive` option to clone the repository.
 
 ### Create links
 
@@ -33,3 +31,5 @@ Create `~/.gitconfig.local` to store user-specific Git settings that should not 
 ## Requirements
 
 ## Acknowledgments
+
+The Neovim configuration in `config/nvim` is derived from [LazyVim/starter](https://github.com/LazyVim/starter) and is licensed under the Apache License 2.0. See [config/nvim/README.md](config/nvim/README.md) for details.
