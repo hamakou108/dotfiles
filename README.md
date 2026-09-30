@@ -31,3 +31,5 @@ Create `~/.gitconfig.local` to store user-specific Git settings that should not 
 ## Requirements
 
 ## Acknowledgments
+
+The Neovim configuration in `config/nvim` is derived from [LazyVim/starter](https://github.com/LazyVim/starter) and is licensed under the Apache License 2.0. See [config/nvim/README.md](config/nvim/README.md) for details.
