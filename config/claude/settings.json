@@ -106,7 +106,7 @@
     "excludedCommands": [
       "git *",
       "gh *",
-      "docker *"
+      "herdr *"
     ],
     "filesystem": {
       "denyRead": [
