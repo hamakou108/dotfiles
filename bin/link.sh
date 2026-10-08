@@ -35,7 +35,7 @@ make_link ${dotfiles_dir}/config/claude/rules ~/.claude/rules
 make_link ${dotfiles_dir}/config/claude/skills ~/.claude/skills
 
 # render configuration files that tools on this machine write to
-bash ${dotfiles_dir}/bin/render-claude-settings.sh
+bash ${dotfiles_dir}/bin/render-claude-settings.sh || exit 1
 
 # update profiles
 touch ~/.bash_profile

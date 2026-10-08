@@ -17,13 +17,13 @@ Then, Run ``link.sh`` to create links to dotfiles.
 sh ./bin/link.sh
 ```
 
-`link.sh` also renders `~/.claude/settings.json` from `config/claude/settings.json` as a regular file, so that changes written by Claude Code or herdr stay on the machine. `${HOME}` in the template is replaced with the home directory. To apply changes to the template, run:
+`link.sh` also renders `~/.claude/settings.json` from `config/claude/settings.json` as a regular file, so that changes written by Claude Code or herdr are kept out of this repository. `${HOME}` in the template is replaced with the home directory. Rendering requires `jq`, which recent macOS versions include and the Brewfile installs. To apply changes to the template, run:
 
 ```shell
 bash ./bin/render-claude-settings.sh
 ```
 
-If the existing file differs from the template, the script prints the difference and backs up the file before overwriting it.
+If the existing file differs from the template, the script prints the difference and backs up the file before overwriting it, so changes made on the machine since the last render are replaced. Move any change worth keeping into the template, or reapply it after rendering.
 
 ### Create Git local config
 

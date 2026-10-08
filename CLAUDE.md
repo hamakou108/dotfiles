@@ -14,7 +14,7 @@ Commit messages follow [Conventional Commits](https://www.conventionalcommits.or
 
 ## Repository Overview
 
-This is a macOS dotfiles repository that manages configuration files for various development tools. It uses symbolic links to connect config files from this repo to their expected locations.
+This is a macOS dotfiles repository that manages configuration files for various development tools. It uses symbolic links to connect config files from this repo to their expected locations, except for files that tools write back to, which are rendered as regular files.
 
 ## Setup Commands
 
@@ -31,9 +31,10 @@ brew bundle --file=config/homebrew/Brewfile
 
 ## Structure
 
-- `bin/link.sh` - Creates symlinks from this repo to home directory locations
+- `bin/link.sh` - Creates symlinks from this repo to home directory locations, then runs `bin/render-claude-settings.sh`
+- `bin/render-claude-settings.sh` - Renders `config/claude/settings.json` to `~/.claude/settings.json` as a regular file, replacing `${HOME}` with the home directory. Prints the difference and backs up the existing file before overwriting it. Requires `jq`
 - `config/claude/hooks/` - Claude Code hook scripts (links to `~/.claude/hooks`)
-- `config/claude/settings.json` - Claude Code settings (links to `~/.claude/settings.json`)
+- `config/claude/settings.json` - Claude Code settings template (rendered to `~/.claude/settings.json`)
 - `config/cmux/cmux.json` - cmux terminal multiplexer config (links to `~/.config/cmux/cmux.json`)
 - `config/ghostty/config.ghostty` - Ghostty terminal emulator config (links to `~/.config/ghostty/config.ghostty`)
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)

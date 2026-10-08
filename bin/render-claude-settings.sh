@@ -14,6 +14,12 @@
 
 set -euo pipefail
 
+# Without the rendered file, Claude Code starts with no sandbox or deny rules
+if ! command -v jq > /dev/null; then
+    echo "jq is required to render Claude Code settings" >&2
+    exit 1
+fi
+
 dotfiles_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 claude_dir=${CLAUDE_CONFIG_DIR:-${HOME}/.claude}
 
@@ -28,10 +34,11 @@ if [[ -e ${output} ]]; then
     if diff -u \
         --label "${output} (current)" <(jq -S . "${output}") \
         --label "${output} (rendered)" <(echo "${rendered}" | jq -S .); then
-        # A symlink left by an older setup is replaced even without differences
+        # Keep the output a regular file, so a symlink is replaced even
+        # without differences
         [[ -L ${output} ]] || exit 0
     else
-        backup=${output}.$(date +%Y%m%d%H%M%S).bak
+        backup=$(mktemp "${output}.$(date +%Y%m%d%H%M%S).XXXXXX")
         # Copy the content even when the output is a symlink
         cp -L "${output}" "${backup}"
         echo "Backed up ${output} to ${backup}"
