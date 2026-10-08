@@ -105,8 +105,7 @@
     "allowUnsandboxedCommands": false,
     "excludedCommands": [
       "git *",
-      "gh *",
-      "docker *"
+      "gh *"
     ],
     "filesystem": {
       "denyRead": [
