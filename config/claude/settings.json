@@ -56,7 +56,6 @@
       "Edit(build.rs)"
     ]
   },
-  "model": "opus[1m]",
   "outputStyle": "Concise",
   "attribution": {
     "sessionUrl": false
