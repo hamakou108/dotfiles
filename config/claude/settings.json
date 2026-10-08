@@ -1,5 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "GH_CONFIG_DIR": "${HOME}/.config/gh-coding-agent",
+    "GIT_CONFIG_COUNT": "5",
+    "GIT_CONFIG_KEY_0": "user.signingkey",
+    "GIT_CONFIG_VALUE_0": "${HOME}/.ssh/id_ed25519_coding_agent_signing.pub",
+    "GIT_CONFIG_KEY_1": "gpg.ssh.program",
+    "GIT_CONFIG_VALUE_1": "ssh-keygen",
+    "GIT_CONFIG_KEY_2": "url.https://github.com/.insteadOf",
+    "GIT_CONFIG_VALUE_2": "git@github.com:",
+    "GIT_CONFIG_KEY_3": "credential.helper",
+    "GIT_CONFIG_VALUE_3": "",
+    "GIT_CONFIG_KEY_4": "credential.https://github.com.helper",
+    "GIT_CONFIG_VALUE_4": "!gh auth git-credential",
+    "SSH_AUTH_SOCK": "${HOME}/.local/state/coding-agent/ssh-agent.sock"
+  },
   "permissions": {
     "allow": [
       "Bash(gh auth status *)",
@@ -71,6 +86,14 @@
             "statusMessage": "Reloading global instructions..."
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/start-coding-agent-ssh-agent.sh"
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -123,14 +146,19 @@
       ],
       "allowRead": [
         "~/.config/cmux",
+        "~/.config/gh-coding-agent",
         "~/.config/ghostty",
         "~/.config/git/attributes",
         "~/.config/git/ignore",
         "~/.config/nvim",
-        "~/.config/zsh"
+        "~/.config/zsh",
+        "~/.ssh/id_ed25519_coding_agent_signing.pub"
       ]
     },
     "network": {
+      "allowUnixSockets": [
+        "${HOME}/.local/state/coding-agent/ssh-agent.sock"
+      ],
       "allowedDomains": [
         "crates.io",
         "files.pythonhosted.org",
