@@ -17,6 +17,14 @@ Then, Run ``link.sh`` to create links to dotfiles.
 sh ./bin/link.sh
 ```
 
+`link.sh` also renders `~/.claude/settings.json` from `config/claude/settings.json` as a regular file, so that changes written by Claude Code or herdr stay on the machine. `${HOME}` in the template is replaced with the home directory. To apply changes to the template, run:
+
+```shell
+bash ./bin/render-claude-settings.sh
+```
+
+If the existing file differs from the template, the script prints the difference and backs up the file before overwriting it.
+
 ### Create Git local config
 
 Create `~/.gitconfig.local` to store user-specific Git settings that should not be committed to this repository.

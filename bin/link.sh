@@ -32,8 +32,10 @@ make_link ${dotfiles_dir}/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
 make_link ${dotfiles_dir}/config/claude/agents ~/.claude/agents
 make_link ${dotfiles_dir}/config/claude/hooks ~/.claude/hooks
 make_link ${dotfiles_dir}/config/claude/rules ~/.claude/rules
-make_link ${dotfiles_dir}/config/claude/settings.json ~/.claude/settings.json
 make_link ${dotfiles_dir}/config/claude/skills ~/.claude/skills
+
+# render configuration files that tools on this machine write to
+bash ${dotfiles_dir}/bin/render-claude-settings.sh
 
 # update profiles
 touch ~/.bash_profile
