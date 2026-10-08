@@ -105,7 +105,8 @@
     "allowUnsandboxedCommands": false,
     "excludedCommands": [
       "git *",
-      "gh *"
+      "gh *",
+      "herdr *"
     ],
     "filesystem": {
       "denyRead": [
