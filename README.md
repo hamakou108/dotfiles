@@ -61,7 +61,13 @@ Create both on each machine:
    pbcopy < /dev/null
    ```
 
-Processes started by git, such as `ssh-keygen` and the credential helper, run inside the sandbox even though git itself is excluded. The sandbox settings therefore allow reading the public key and the token directory, and connecting to the ssh-agent socket. The private key stays unreadable to agents, because hooks run outside the sandbox and only the hook reads it. The token stays readable, since gh and git need it; its repositories, permissions, and expiration limit what a leak can do.
+git and gh run inside the sandbox, so they cannot read the private key or the keychain. The sandbox settings allow what they need:
+
+- Reading the public key and the token directory, and connecting to the ssh-agent socket. Only the hook, which runs outside the sandbox, reads the private key.
+- Reaching `github.com` and `api.github.com`.
+- `enableWeakerNetworkIsolation`, which lets sandboxed commands ask macOS `trustd` to verify certificates. gh verifies TLS certificates through it, while git verifies them itself. Because `trustd` may contact servers outside the sandbox proxy, for example to check revocation, this opens a narrow path around the domain allowlist. Running gh outside the sandbox instead would let it read any file and use the keychain token.
+
+The token stays readable to agents, since gh and git need it. Its repositories, permissions, and expiration limit what a leak can do. `GH_TOKEN` and `GITHUB_TOKEN` take precedence over `GH_CONFIG_DIR`, so do not export them in the environment Claude Code starts from.
 
 ## Requirements
 
