@@ -36,6 +36,39 @@ Create `~/.gitconfig.local` to store user-specific Git settings that should not 
 	signingkey = ssh-ed25519 AAAA...
 ```
 
+### Create coding agent credentials
+
+Claude Code runs git and gh with credentials of their own, set in `env` of `config/claude/settings.json`, so that agents never use the 1Password SSH agent or the token `gh auth login` stores in the keychain:
+
+- Commits are signed with `~/.ssh/id_ed25519_coding_agent_signing` instead of the 1Password key. A `SessionStart` hook (`config/claude/hooks/start-coding-agent-ssh-agent.sh`) loads the key into a dedicated ssh-agent, and agents sign through its socket at `~/.local/state/coding-agent/ssh-agent.sock` without being able to read the key.
+- GitHub is reached over HTTPS with a fine-grained personal access token stored in `~/.config/gh-coding-agent`. SSH remote URLs are rewritten to HTTPS, and the keychain credential helper is disabled.
+
+Create both on each machine:
+
+1. Create the signing key without a passphrase, so that agents can sign unattended:
+
+   ```shell
+   ssh-keygen -t ed25519 -N "" -C "coding-agent-signing@$(hostname -s)" -f ~/.ssh/id_ed25519_coding_agent_signing
+   ```
+
+2. Register `~/.ssh/id_ed25519_coding_agent_signing.pub` on GitHub as a **Signing Key** only, not as an Authentication Key.
+3. Create a fine-grained personal access token with your account as the resource owner, with Contents, Issues, and Pull requests set to read and write, and Actions and Commit statuses set to read-only. Leave out Workflows and Administration, so that agents can change neither workflows nor rulesets.
+4. Copy the token, then store it without echoing it:
+
+   ```shell
+   mkdir -p ~/.config/gh-coding-agent && chmod 700 ~/.config/gh-coding-agent
+   pbpaste | GH_CONFIG_DIR=~/.config/gh-coding-agent gh auth login --hostname github.com --git-protocol https --insecure-storage --with-token
+   pbcopy < /dev/null
+   ```
+
+git and gh run inside the sandbox, so they cannot read the private key or the keychain. The sandbox settings allow what they need:
+
+- Reading the public key and the token directory, and connecting to the ssh-agent socket. Only the hook, which runs outside the sandbox, reads the private key.
+- Reaching `github.com` and `api.github.com`.
+- `enableWeakerNetworkIsolation`, which lets sandboxed commands ask macOS `trustd` to verify certificates. gh verifies TLS certificates through it, while git verifies them itself. Because `trustd` may contact servers outside the sandbox proxy, for example to check revocation, this opens a narrow path around the domain allowlist. Running gh outside the sandbox instead would let it read any file and use the keychain token.
+
+The token stays readable to agents, since gh and git need it. Its repositories, permissions, and expiration limit what a leak can do. `GH_TOKEN` and `GITHUB_TOKEN` take precedence over `GH_CONFIG_DIR`, so do not export them in the environment Claude Code starts from.
+
 ## Requirements
 
 ## Acknowledgments
