@@ -11,9 +11,9 @@
 These conventions apply across code, tests, and documentation.
 
 - **Record in the project's language**: When recording user input in any file (audit.md, plan, etc.), translate it into the project's natural language—the one used in its docs and commit messages—so all content stays consistent.
-- **Space around English in Japanese**: When writing in Japanese, add spaces around English words and parentheses, just like in English.
-  - Good: これは Claude Code の設定です (推奨)
-  - Bad: これはClaude Codeの設定です（非推奨）
+- **Space around English in Japanese**: When writing in Japanese, add spaces around English words and half-width parentheses, just like in English. As in English, add no space between a closing parenthesis and the punctuation that follows it. Japanese punctuation (、。) already separates the words, so add no space right after it either.
+  - Good: 設定は settings.json (ユーザー単位) に書く。Claude Code は起動時に、settings.json を読み込む (再起動が必要)。
+  - Bad: 設定はsettings.json（ユーザー単位）に書く。 Claude Code は起動時に、 settings.json を読み込む (再起動が必要) 。
 - **Order additions logically**: When adding elements—list items, type definitions, methods, test cases, bullet points, and the like—place them where they belong in a natural, logical order rather than simply appending to the end.
 - **Write for an outside reader**: Write comments and documentation so that someone not involved in the change can understand them. Add the context needed to grasp the intent, but keep it concise and leave out information relevant only to the current working context.
 - **Don't record why something was changed**: Code and documentation describe the current state, not how it got there. Never write the reason for a modification into them—neither comments like `// changed from X to Y` nor prose like "previously this was ...". Readers rarely care whether a part was modified, so this is noise to them. The exception is an artifact whose *purpose* is to record what happened—commit logs, changelogs, ADRs, audit logs. Test: does this file exist to record that something occurred? If yes, the rationale belongs there; if it exists to describe how things are now, it does not. Writing _Why not_ remains fine where a reader would otherwise stumble over the choice—see the HWWWn principle under Development Principles.
