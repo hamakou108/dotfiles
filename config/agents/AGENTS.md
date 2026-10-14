@@ -34,9 +34,9 @@ Follow the project's conventions first, while keeping these principles in mind:
 These apply at the boundaries of a change—what to confirm before starting, and what to include when committing.
 
 - **Verify the specification in use**: Check the current specification for the version in use before relying on it—specifications change. Trigger on observable signals: the version postdates your knowledge cutoff, the repository pins a version you have not confirmed, or a call fails in a way the documented behavior does not explain.
-- **Research unconfirmed technologies**: Invoke the `best-practices-researcher` agent before implementing against a technology whose current practices you have not confirmed. Treat it as unconfirmed unless this session has established how the version in use is meant to be used.
+- **Research unconfirmed technologies**: Invoke the `best-practices-researcher` skill before implementing against a technology whose current practices you have not confirmed. Treat it as unconfirmed unless this session has established how the version in use is meant to be used.
 - **Commit with Conventional Commits**: Follow [Conventional Commits](https://www.conventionalcommits.org/) format for commit messages, using the language that matches the project's convention.
-- **Update affected documentation**: When making changes that affect documented behavior, update the relevant documentation (e.g., CLAUDE.md, README) in the same commit.
+- **Update affected documentation**: When making changes that affect documented behavior, update the relevant documentation (e.g., AGENTS.md, CLAUDE.md, README) in the same commit.
 
 ## Working with External Systems
 
@@ -51,6 +51,6 @@ These apply to any system outside the local working copy—hosted services (e.g.
 
 ## Troubleshooting
 
-- **Sandbox restrictions**: A command may fail with a sandbox signature—"Operation not permitted", or indirect failures like GPG/SSH signing errors or socket access issues. The escape hatch that retries outside the sandbox is disabled, so report the blocked path or domain and let the user widen `sandbox.filesystem` or `sandbox.network` in settings.json. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
-- **Permission denials are not sandbox restrictions**: "Permission to use X has been denied" means a permission rule or the user rejected the call. Disabling the sandbox will not help and must not be attempted. Switch to an allowed tool or ask, and do not retry the same call.
+- **Sandbox restrictions**: A command may fail with a sandbox signature—"Operation not permitted", or indirect failures like GPG/SSH signing errors or socket access issues. Retrying outside the sandbox is not an option, so report the blocked path or domain and let the user widen the sandbox configuration of the agent in use. Never modify the command itself (e.g., adding flags to skip features) to work around a failure.
+- **Permission denials are not sandbox restrictions**: A message that a tool call was denied means a permission rule or the user rejected the call. Disabling the sandbox will not help and must not be attempted. Switch to an allowed tool or ask, and do not retry the same call.
 - **Interactive aliases**: Destructive file commands (`mv`, `cp`, `rm`) may be aliased to their `-i` (interactive) variants in zsh, which prompt for confirmation and block non-interactive execution. Pass `-f` when running them (e.g., `mv -f`, `cp -f`, `rm -f`).
