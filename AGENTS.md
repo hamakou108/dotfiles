@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to coding agents such as Claude Code and Codex when working with code in this repository.
 
 ## Language
 
@@ -33,6 +33,8 @@ brew bundle --file=config/homebrew/Brewfile
 
 - `bin/link.sh` - Creates symlinks from this repo to home directory locations, then runs `bin/render-claude-settings.sh`
 - `bin/render-claude-settings.sh` - Renders `config/claude/settings.json` to `~/.claude/settings.json` as a regular file, replacing `${HOME}` with the home directory. Prints the difference and backs up the existing file before overwriting it. Requires `jq`
+- `config/agents/AGENTS.md` - Global instructions shared by coding agents (links to `~/.codex/AGENTS.md` and `~/.claude/CLAUDE.md`)
+- `config/agents/skills/` - [Agent Skills](https://agentskills.io/) shared by coding agents (links to `~/.agents/skills` for Codex, and each skill to `~/.claude/skills/<name>` for Claude Code, since Claude Code writes skills synced from the account into `~/.claude/skills`)
 - `config/claude/hooks/` - Claude Code hook scripts (links to `~/.claude/hooks`)
 - `config/claude/settings.json` - Claude Code settings template (rendered to `~/.claude/settings.json`)
 - `config/cmux/cmux.json` - cmux terminal multiplexer config (links to `~/.config/cmux/cmux.json`)
