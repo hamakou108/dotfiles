@@ -10,4 +10,4 @@
 
 set -euo pipefail
 
-cat "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../CLAUDE.md"
+cat "${HOME}/.claude/CLAUDE.md"
