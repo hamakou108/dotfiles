@@ -117,9 +117,16 @@ typeset -U PATH path MANPATH manpath
 
 export LANG=en_US.UTF-8
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+# Ask before overwriting or deleting only in a terminal where someone can
+# answer. Shells started without a terminal on stdin, such as the ones coding
+# agents capture aliases from, get the plain commands, since a prompt there
+# reads EOF and the command fails without doing anything. These stay aliases
+# rather than functions so that `sudo rm` still expands to `sudo rm -i`.
+if [[ -t 0 ]]; then
+    alias rm='rm -i'
+    alias cp='cp -i'
+    alias mv='mv -i'
+fi
 
 # # Enable alist after "sudo"
 alias sudo='sudo '
