@@ -40,6 +40,7 @@ brew bundle --file=config/homebrew/Brewfile
 - `config/cmux/cmux.json` - cmux terminal multiplexer config (links to `~/.config/cmux/cmux.json`)
 - `config/ghostty/config.ghostty` - Ghostty terminal emulator config (links to `~/.config/ghostty/config.ghostty`)
 - `config/git/gitconfig` - Git configuration (links to `~/.gitconfig`)
+- `config/git/ignore` - Global Git ignore patterns for files produced by this machine and personal tools, independent of any project (links to `~/.config/git/ignore`, Git's default `core.excludesFile` location)
 - `config/herdr/config.toml` - herdr agent multiplexer config (links to `~/.config/herdr/config.toml`)
 - `config/homebrew/Brewfile` - Homebrew package manifest
 - `config/nvim/` - LazyVim configuration (links to `~/.config/nvim`)
