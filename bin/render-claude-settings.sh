@@ -14,7 +14,7 @@
 
 set -euo pipefail
 
-# Without the rendered file, Claude Code starts with no sandbox or deny rules
+# Without the rendered file, Claude Code starts with no sandbox
 if ! command -v jq > /dev/null; then
     echo "jq is required to render Claude Code settings" >&2
     exit 1
